@@ -9,8 +9,15 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        primary: "#E6F1FF",
+        lightGray: "#F0F4F8",
+        secondary: "#0A192F",
+        highlight: "#64FFDA",
+      },
+      fontFamily: {
+        inter: ['Inter', 'sans-serif'],
+        poppins: ['Poppins', 'sans-serif'],
+        fira: ['Fira Code', 'monospace'],
       },
     },
   },
