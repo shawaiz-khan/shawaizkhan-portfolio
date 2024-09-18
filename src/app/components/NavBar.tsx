@@ -12,36 +12,36 @@ const NavBar: FC = () => {
         <header>
             <nav className='bg-secondary h-20 flex justify-between items-center px-6'>
                 {/* Logo */}
-                <div className="logo flex items-center gap-1 font-semibold text-3xl text-primary">
+                <div className="cursor-pointer flex items-center gap-1 font-semibold text-3xl text-primary">
                     <span className='text-highlight font-fira'>&lt;</span>
                     <h1 className="font-fira">SK</h1>
                     <span className='text-highlight font-fira'>/&gt;</span>
                 </div>
 
                 {/* Desktop Menu */}
-                <ul className='font-poppins font-semibold hidden text-xl gap-7 text-primary md:flex'>
-                    <li className='cursor-pointer relative hover:text-highlight transition-all duration-200 ease-in before:content-[""] before:absolute before:left-0 before:bottom-0 before:w-full before:h-0.5 before:bg-highlight before:scale-x-0 hover:before:scale-x-100 before:transition-transform before:duration-200'>
+                <ul className='font-poppins hidden text-xl gap-7 text-primary md:flex'>
+                    <li className='font-semibold cursor-pointer relative hover:text-highlight transition-all duration-200 ease-in before:content-[""] before:absolute before:left-0 before:bottom-0 before:w-full before:h-0.5 before:bg-highlight before:scale-x-0 hover:before:scale-x-100 before:transition-transform before:duration-200'>
                         HOME
                     </li>
                     <li className='relative group'>
-                        <button className='relative z-10 text-primary hover:text-highlight transition-all duration-200 ease-in before:content-[""] before:absolute before:left-0 before:bottom-0 before:w-full before:h-0.5 before:bg-highlight before:scale-x-0 hover:before:scale-x-100 before:transition-transform before:duration-200'>
+                        <button className='font-semibold relative z-10 text-primary hover:text-highlight transition-all duration-200 ease-in before:content-[""] before:absolute before:left-0 before:bottom-0 before:w-full before:h-0.5 before:bg-highlight before:scale-x-0 hover:before:scale-x-100 before:transition-transform before:duration-200'>
                             ABOUT
                         </button>
                         <ul className='absolute top-full left-0 mt-2 bg-secondary text-primary w-48 border border-highlight rounded-md shadow-md opacity-0 group-hover:opacity-100 transition-opacity duration-200 ease-in'>
-                            <li className='p-2 hover:bg-highlight hover:text-secondary cursor-pointer transition-all duration-200 ease-in'>Experience</li>
-                            <li className='p-2 hover:bg-highlight hover:text-secondary cursor-pointer transition-all duration-200 ease-in'>Education</li>
+                            <li className='font-semibold p-2 hover:bg-highlight hover:text-secondary cursor-pointer transition-all duration-200 ease-in'>Experience</li>
+                            <li className='font-semibold p-2 hover:bg-highlight hover:text-secondary cursor-pointer transition-all duration-200 ease-in'>Education</li>
                         </ul>
                     </li>
-                    <li className='cursor-pointer relative hover:text-highlight transition-all duration-200 ease-in before:content-[""] before:absolute before:left-0 before:bottom-0 before:w-full before:h-0.5 before:bg-highlight before:scale-x-0 hover:before:scale-x-100 before:transition-transform before:duration-200'>
+                    <li className='font-semibold cursor-pointer relative hover:text-highlight transition-all duration-200 ease-in before:content-[""] before:absolute before:left-0 before:bottom-0 before:w-full before:h-0.5 before:bg-highlight before:scale-x-0 hover:before:scale-x-100 before:transition-transform before:duration-200'>
                         SKILLS
                     </li>
-                    <li className='cursor-pointer relative hover:text-highlight transition-all duration-200 ease-in before:content-[""] before:absolute before:left-0 before:bottom-0 before:w-full before:h-0.5 before:bg-highlight before:scale-x-0 hover:before:scale-x-100 before:transition-transform before:duration-200'>
+                    <li className='font-semibold cursor-pointer relative hover:text-highlight transition-all duration-200 ease-in before:content-[""] before:absolute before:left-0 before:bottom-0 before:w-full before:h-0.5 before:bg-highlight before:scale-x-0 hover:before:scale-x-100 before:transition-transform before:duration-200'>
                         PROJECTS
                     </li>
-                    <li className='cursor-pointer relative hover:text-highlight transition-all duration-200 ease-in before:content-[""] before:absolute before:left-0 before:bottom-0 before:w-full before:h-0.5 before:bg-highlight before:scale-x-0 hover:before:scale-x-100 before:transition-transform before:duration-200'>
+                    <li className='font-semibold cursor-pointer relative hover:text-highlight transition-all duration-200 ease-in before:content-[""] before:absolute before:left-0 before:bottom-0 before:w-full before:h-0.5 before:bg-highlight before:scale-x-0 hover:before:scale-x-100 before:transition-transform before:duration-200'>
                         TESTIMONIALS
                     </li>
-                    <li className='cursor-pointer relative hover:text-highlight transition-all duration-200 ease-in before:content-[""] before:absolute before:left-0 before:bottom-0 before:w-full before:h-0.5 before:bg-highlight before:scale-x-0 hover:before:scale-x-100 before:transition-transform before:duration-200'>
+                    <li className='font-semibold cursor-pointer relative hover:text-highlight transition-all duration-200 ease-in before:content-[""] before:absolute before:left-0 before:bottom-0 before:w-full before:h-0.5 before:bg-highlight before:scale-x-0 hover:before:scale-x-100 before:transition-transform before:duration-200'>
                         CONTACT
                     </li>
                 </ul>
@@ -57,31 +57,31 @@ const NavBar: FC = () => {
                 </button>
 
                 {/* Mobile Menu */}
-                <div className={`fixed bottom-0 top-0 right-0 bg-secondary p-6 transition-transform ${isOpen ? 'translate-x-0' : 'translate-x-full'} duration-300 ease-in-out`} style={{ width: '75%' }}>
+                <div className={`fixed bottom-0 top-0 right-0 bg-secondary p-6 transition-transform ${isOpen ? 'translate-x-0' : 'translate-x-full'} duration-300 ease-in-out`} style={{ width: '55%' }}>
                     <ul className='flex flex-col font-poppins font-semibold text-xl gap-7 text-primary'>
-                        <li className='py-2 cursor-pointer hover:text-highlight' onClick={menuToggle}>{isOpen ? <HiX size={24} /> : <HiMenu size={24} />}</li>
-                        <li className='w-fit cursor-pointer relative hover:text-highlight transition-all duration-200 ease-in before:content-[""] before:absolute before:left-0 before:bottom-0 before:w-full before:h-0.5 before:bg-highlight before:scale-x-0 hover:before:scale-x-100 before:transition-transform before:duration-200'>
+                        <li className='py-2 cursor-pointer hover:text-highlight transition-all duration-200 ease-in' onClick={menuToggle}>{isOpen ? <HiX size={24} /> : <HiMenu size={24} />}</li>
+                        <li className='font-semibold w-fit cursor-pointer relative hover:text-highlight transition-all duration-200 ease-in before:content-[""] before:absolute before:left-0 before:bottom-0 before:w-full before:h-0.5 before:bg-highlight before:scale-x-0 hover:before:scale-x-100 before:transition-transform before:duration-200'>
                             HOME
                         </li>
-                        <li className='w-fit cursor-pointer relative hover:text-highlight transition-all duration-200 ease-in before:content-[""] before:absolute before:left-0 before:bottom-0 before:w-full before:h-0.5 before:bg-highlight before:scale-x-0 hover:before:scale-x-100 before:transition-transform before:duration-200'>
+                        <li className='font-semibold w-fit cursor-pointer relative hover:text-highlight transition-all duration-200 ease-in before:content-[""] before:absolute before:left-0 before:bottom-0 before:w-full before:h-0.5 before:bg-highlight before:scale-x-0 hover:before:scale-x-100 before:transition-transform before:duration-200'>
                             ABOUT
                         </li>
-                        <li className='w-fit cursor-pointer relative hover:text-highlight transition-all duration-200 ease-in before:content-[""] before:absolute before:left-0 before:bottom-0 before:w-full before:h-0.5 before:bg-highlight before:scale-x-0 hover:before:scale-x-100 before:transition-transform before:duration-200'>
+                        <li className='font-semibold w-fit cursor-pointer relative hover:text-highlight transition-all duration-200 ease-in before:content-[""] before:absolute before:left-0 before:bottom-0 before:w-full before:h-0.5 before:bg-highlight before:scale-x-0 hover:before:scale-x-100 before:transition-transform before:duration-200'>
                             EXPERIENCE
                         </li>
-                        <li className='w-fit cursor-pointer relative hover:text-highlight transition-all duration-200 ease-in before:content-[""] before:absolute before:left-0 before:bottom-0 before:w-full before:h-0.5 before:bg-highlight before:scale-x-0 hover:before:scale-x-100 before:transition-transform before:duration-200'>
+                        <li className='font-semibold w-fit cursor-pointer relative hover:text-highlight transition-all duration-200 ease-in before:content-[""] before:absolute before:left-0 before:bottom-0 before:w-full before:h-0.5 before:bg-highlight before:scale-x-0 hover:before:scale-x-100 before:transition-transform before:duration-200'>
                             EDUCATION
                         </li>
-                        <li className='w-fit cursor-pointer relative hover:text-highlight transition-all duration-200 ease-in before:content-[""] before:absolute before:left-0 before:bottom-0 before:w-full before:h-0.5 before:bg-highlight before:scale-x-0 hover:before:scale-x-100 before:transition-transform before:duration-200'>
+                        <li className='font-semibold w-fit cursor-pointer relative hover:text-highlight transition-all duration-200 ease-in before:content-[""] before:absolute before:left-0 before:bottom-0 before:w-full before:h-0.5 before:bg-highlight before:scale-x-0 hover:before:scale-x-100 before:transition-transform before:duration-200'>
                             SKILLS
                         </li>
-                        <li className='w-fit cursor-pointer relative hover:text-highlight transition-all duration-200 ease-in before:content-[""] before:absolute before:left-0 before:bottom-0 before:w-full before:h-0.5 before:bg-highlight before:scale-x-0 hover:before:scale-x-100 before:transition-transform before:duration-200'>
+                        <li className='font-semibold w-fit cursor-pointer relative hover:text-highlight transition-all duration-200 ease-in before:content-[""] before:absolute before:left-0 before:bottom-0 before:w-full before:h-0.5 before:bg-highlight before:scale-x-0 hover:before:scale-x-100 before:transition-transform before:duration-200'>
                             PROJECTS
                         </li>
-                        <li className='w-fit cursor-pointer relative hover:text-highlight transition-all duration-200 ease-in before:content-[""] before:absolute before:left-0 before:bottom-0 before:w-full before:h-0.5 before:bg-highlight before:scale-x-0 hover:before:scale-x-100 before:transition-transform before:duration-200'>
+                        <li className='font-semibold w-fit cursor-pointer relative hover:text-highlight transition-all duration-200 ease-in before:content-[""] before:absolute before:left-0 before:bottom-0 before:w-full before:h-0.5 before:bg-highlight before:scale-x-0 hover:before:scale-x-100 before:transition-transform before:duration-200'>
                             TESTIMONIALS
                         </li>
-                        <li className='w-fit cursor-pointer relative hover:text-highlight transition-all duration-200 ease-in before:content-[""] before:absolute before:left-0 before:bottom-0 before:w-full before:h-0.5 before:bg-highlight before:scale-x-0 hover:before:scale-x-100 before:transition-transform before:duration-200'>
+                        <li className='font-semibold w-fit cursor-pointer relative hover:text-highlight transition-all duration-200 ease-in before:content-[""] before:absolute before:left-0 before:bottom-0 before:w-full before:h-0.5 before:bg-highlight before:scale-x-0 hover:before:scale-x-100 before:transition-transform before:duration-200'>
                             CONTACT
                         </li>
                         {/* Book a Meeting Button */}
