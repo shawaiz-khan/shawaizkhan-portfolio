@@ -4,28 +4,9 @@
 
 @font-face {
   font-family: 'Poppins';
-  font-weight: 100;
-  font-style: normal;
-  src: url('https://cdn.jsdelivr.net/gh/webfontworld/Poppins/Poppins-Thin.woff2') format('woff2'),
-    url('https://cdn.jsdelivr.net/gh/webfontworld/Poppins/Poppins-Thin.woff') format('woff');
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Poppins';
-  font-weight: 200;
-  font-style: normal;
-  src: url('https://cdn.jsdelivr.net/gh/webfontworld/Poppins/Poppins-ExtraLight.woff2') format('woff2'),
-    url('https://cdn.jsdelivr.net/gh/webfontworld/Poppins/Poppins-ExtraLight.woff') format('woff');
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Poppins';
   font-weight: 300;
   font-style: normal;
-  src: url('https://cdn.jsdelivr.net/gh/webfontworld/Poppins/Poppins-Light.woff2') format('woff2'),
-    url('https://cdn.jsdelivr.net/gh/webfontworld/Poppins/Poppins-Light.woff') format('woff');
+  src: url('./fonts/Poppins-Light.woff2') format('woff2');
   font-display: swap;
 }
 
@@ -33,8 +14,7 @@
   font-family: 'Poppins';
   font-weight: 400;
   font-style: normal;
-  src: url('https://cdn.jsdelivr.net/gh/webfontworld/Poppins/Poppins-Regular.woff2') format('woff2'),
-    url('https://cdn.jsdelivr.net/gh/webfontworld/Poppins/Poppins-Regular.woff') format('woff');
+  src: url('./fonts/Poppins-Regular.woff2') format('woff2');
   font-display: swap;
 }
 
@@ -42,8 +22,7 @@
   font-family: 'Poppins';
   font-weight: 500;
   font-style: normal;
-  src: url('https://cdn.jsdelivr.net/gh/webfontworld/Poppins/Poppins-Medium.woff2') format('woff2'),
-    url('https://cdn.jsdelivr.net/gh/webfontworld/Poppins/Poppins-Medium.woff') format('woff');
+  src: url('./fonts/Poppins-Medium.woff2') format('woff2');
   font-display: swap;
 }
 
@@ -51,8 +30,7 @@
   font-family: 'Poppins';
   font-weight: 600;
   font-style: normal;
-  src: url('https://cdn.jsdelivr.net/gh/webfontworld/Poppins/Poppins-SemiBold.woff2') format('woff2'),
-    url('https://cdn.jsdelivr.net/gh/webfontworld/Poppins/Poppins-SemiBold.woff') format('woff');
+  src: url('./fonts/Poppins-SemiBold.woff2') format('woff2');
   font-display: swap;
 }
 
@@ -60,8 +38,7 @@
   font-family: 'Poppins';
   font-weight: 700;
   font-style: normal;
-  src: url('https://cdn.jsdelivr.net/gh/webfontworld/Poppins/Poppins-Bold.woff2') format('woff2'),
-    url('https://cdn.jsdelivr.net/gh/webfontworld/Poppins/Poppins-Bold.woff') format('woff');
+  src: url('./fonts/Poppins-Bold.woff2') format('woff2');
   font-display: swap;
 }
 
@@ -69,20 +46,87 @@
   font-family: 'Poppins';
   font-weight: 800;
   font-style: normal;
-  src: url('https://cdn.jsdelivr.net/gh/webfontworld/Poppins/Poppins-ExtraBold.woff2') format('woff2'),
-    url('https://cdn.jsdelivr.net/gh/webfontworld/Poppins/Poppins-ExtraBold.woff') format('woff');
+  src: url('./fonts/Poppins-ExtraBold.woff2') format('woff2');
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Poppins';
-  font-weight: 900;
+  font-family: 'Fira Code';
+  font-weight: 100;
   font-style: normal;
-  src: url('https://cdn.jsdelivr.net/gh/webfontworld/Poppins/Poppins-Black.eot');
-  src: url('https://cdn.jsdelivr.net/gh/webfontworld/Poppins/Poppins-Black.eot?#iefix') format('embedded-opentype'),
-    url('https://cdn.jsdelivr.net/gh/webfontworld/Poppins/Poppins-Black.woff2') format('woff2'),
-    url('https://cdn.jsdelivr.net/gh/webfontworld/Poppins/Poppins-Black.woff') format('woff'),
-    url('https://cdn.jsdelivr.net/gh/webfontworld/Poppins/Poppins-Black.ttf') format("truetype");
+  src: url(./fonts/FiraCode-Retina.woff2) format('woff2');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Fira Code';
+  font-weight: 300;
+  font-style: normal;
+  src: url(./fonts/FiraCode-Light.woff2) format('woff2');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Fira Code';
+  font-weight: 400;
+  font-style: normal;
+  src: url(./fonts/FiraCode-Regular.woff2) format('woff2');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Fira Code';
+  font-weight: 500;
+  font-style: normal;
+  src: url(./fonts/FiraCode-Medium.woff2) format('woff2');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Fira Code';
+  font-weight: 600;
+  font-style: normal;
+  src: url(./fonts/FiraCode-SemiBold.woff2) format('woff2');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Fira Code';
+  font-weight: 700;
+  font-style: normal;
+  src: url(./fonts/FiraCode-Bold.woff2) format('woff2');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-weight: 400;
+  font-style: normal;
+  src: url(./fonts/Inter-Regular.woff2) format('woff2');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-weight: 500;
+  font-style: normal;
+  src: url(./fonts/Inter-Medium.woff2) format('woff2');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-weight: 600;
+  font-style: normal;
+  src: url(./fonts/Inter-SemiBold.woff2) format('woff2');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-weight: 700;
+  font-style: normal;
+  src: url(./fonts/Inter-Bold.woff2) format('woff2');
   font-display: swap;
 }
 
