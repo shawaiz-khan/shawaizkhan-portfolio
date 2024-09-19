@@ -11,8 +11,8 @@ const config: Config = {
       colors: {
         primary: "#E6F1FF",
         lightGray: "#F0F4F8",
-        secondary: "#0A192F",
-        highlight: "#64FFDA",
+        secondary: "#1E2A38",
+        highlight: "#9A4DFF",
       },
       fontFamily: {
         inter: ['Inter', 'sans-serif'],
