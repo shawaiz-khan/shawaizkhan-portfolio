@@ -47,7 +47,7 @@ const NavBar: FC = () => {
                 </ul>
 
                 {/* Book a Meeting Button */}
-                <button className='bg-highlight w-48 h-9 rounded-md text-secondary font-poppins font-semibold hover:bg-primary transition-colors duration-200 ease-in text-lg hidden md:flex md:justify-center md:items-center'>
+                <button className='bg-highlight hover:text-highlight w-48 h-9 rounded-md text-primary font-poppins font-semibold hover:bg-primary transition-colors duration-200 ease-in text-lg hidden md:flex md:justify-center md:items-center'>
                     BOOK A MEETING
                 </button>
 
@@ -85,7 +85,7 @@ const NavBar: FC = () => {
                             CONTACT
                         </li>
                         {/* Book a Meeting Button */}
-                        <button className='bg-highlight w-48 h-9 rounded-md text-secondary font-poppins font-semibold hover:bg-primary transition-colors duration-200 ease-in text-lg'>
+                        <button className='bg-highlight w-48 h-9 rounded-md text-primary font-poppins font-semibold hover:bg-primary transition-colors duration-200 ease-in text-lg hover:text-highlight'>
                             BOOK A MEETING
                         </button>
                     </ul>
