@@ -3,6 +3,7 @@ import * as React from 'react';
 import Button from './Buttons';
 import Image from 'next/image';
 import HeroImg from '../assets/images/img-2.png'
+import Typewriter from './Typewritter';
 
 const Hero: React.FC = () => {
     return (
@@ -10,7 +11,10 @@ const Hero: React.FC = () => {
             <article className='text-secondary gap-2 flex flex-col justify-center'>
                 <span className='text-base font-poppins font-light'>WELCOME TO MY WORLD!</span>
                 <h1 className='text-6xl font-poppins font-bold'>I'M SHAWAIZ KHAN</h1>
-                <h3 className="font-inter text-3xl font-semibold">a FRONT-END DEVELOPER</h3>
+                <h3 className="font-inter text-3xl font-semibold flex gap-2">
+                    a
+                    <Typewriter titles={['Frontend Developer', 'Graphic Designer']} />
+                </h3>
                 <p className="text-base font-inter font-light">
                     I design and build websites that look great and work smoothly. I focus on making things simple and easy
                     to use, ensuring every detail serves a purpose and enhances the user experience.

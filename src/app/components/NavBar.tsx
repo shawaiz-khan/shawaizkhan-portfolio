@@ -1,16 +1,29 @@
 'use client'
 
-import React, { FC, useState } from 'react';
+import React, { FC, useState, useEffect } from 'react';
 import { HiMenu, HiX } from 'react-icons/hi';
 
 const NavBar: FC = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const [isSticky, setIsSticky] = useState(false);
 
     const menuToggle = () => setIsOpen(!isOpen);
 
+    const handleScroll = () => {
+        const scrollTop = window.scrollY;
+        setIsSticky(scrollTop > 50);
+    };
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
     return (
-        <header>
-            <nav className='bg-secondary h-20 flex justify-between items-center px-6'>
+        <header className={`sticky ${isSticky ? 'top-4' : ''}`}>
+            <nav className={`bg-secondary h-20 flex justify-between items-center px-6 ${isSticky ? 'rounded-full mx-4' : ''} transition-all duration-300`}>
                 {/* Logo */}
                 <div className="cursor-pointer flex items-center gap-1 font-semibold text-3xl text-primary">
                     <span className='text-highlight font-fira'>&lt;</span>
@@ -47,7 +60,7 @@ const NavBar: FC = () => {
                 </ul>
 
                 {/* Book a Meeting Button */}
-                <button className='bg-highlight hover:text-highlight w-48 h-9 rounded-md text-primary font-poppins font-semibold hover:bg-primary transition-colors duration-200 ease-in text-lg hidden md:flex md:justify-center md:items-center'>
+                <button className='bg-highlight hover:text-highlight w-48 h-9 rounded-full text-primary font-poppins font-semibold hover:bg-primary transition-colors duration-200 ease-in text-lg hidden md:flex md:justify-center md:items-center'>
                     BOOK A MEETING
                 </button>
 
