@@ -1,11 +1,12 @@
 /* eslint-disable react/no-unescaped-entities */
 import * as React from 'react';
 import Button from './Buttons';
-// import Image from 'next/image';
+import Image from 'next/image';
+import HeroImg from '../assets/images/img-2.png'
 
 const Hero: React.FC = () => {
     return (
-        <div className='p-6 grid grid-cols-2'>
+        <div className='p-6 grid grid-cols-2 h-[600px]'>
             <article className='text-secondary gap-2 flex flex-col justify-center'>
                 <span className='text-base font-poppins font-light'>WELCOME TO MY WORLD!</span>
                 <h1 className='text-6xl font-poppins font-bold'>I'M SHAWAIZ KHAN</h1>
@@ -27,9 +28,12 @@ const Hero: React.FC = () => {
                     />
                 </div>
             </article>
-            {/* <Image 
-                src={ }
-            /> */}
+            <Image
+                src={HeroImg}
+                alt='Shawaiz Khan'
+                width={500}
+                height={200}
+            />
         </div>
     );
 }
