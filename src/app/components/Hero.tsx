@@ -35,8 +35,7 @@ const Hero: React.FC = () => {
             <Image
                 src={HeroImg}
                 alt='Shawaiz Khan'
-                width={500}
-                height={200}
+                className='max-w-96 h-auto mx-auto my-auto'
             />
         </div>
     );
