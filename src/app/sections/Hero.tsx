@@ -1,9 +1,9 @@
 /* eslint-disable react/no-unescaped-entities */
 import * as React from 'react';
-import Button from './Buttons';
+import Button from '../components/Buttons';
 import Image from 'next/image';
 import HeroImg from '../assets/images/img-2.png'
-import Typewriter from './Typewritter';
+import Typewriter from '../components/Typewritter';
 
 const Hero: React.FC = () => {
     return (
