@@ -22,7 +22,7 @@ const NavBar: FC = () => {
     }, []);
 
     return (
-        <header className={`sticky ${isSticky ? 'top-4' : ''}`}>
+        <header className={`sticky ${isSticky ? 'top-4' : ''} z-20`}>
             <nav className={`bg-secondary h-20 flex justify-between items-center px-6 ${isSticky ? 'rounded-full mx-4' : ''} transition-all duration-300 shadow-lg`}>
                 {/* Logo */}
                 <div className="cursor-pointer flex items-center gap-1 font-semibold text-3xl text-primary">
