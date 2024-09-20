@@ -33,9 +33,9 @@ const About: FC = () => {
                 className='max-w-96 h-auto mx-auto my-auto'
             />
             <article className='text-secondary flex flex-col gap-6'>
-                <article>
+                <article className='w-4/5'>
                     <h1 className='font-poppins font-bold text-5xl'>ABOUT ME</h1>
-                    <p className='font-inter font-normal text-base'>
+                    <p className='font-inter font-normal text-lg'>
                         Building easy-to-use websites and apps from your ideas. I focus on making everything clear and simple for users.
                     </p>
                 </article>
