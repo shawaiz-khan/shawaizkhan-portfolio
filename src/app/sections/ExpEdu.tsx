@@ -1,13 +1,16 @@
-'use client'
+'use client';
 
 import React, { FC, useState } from 'react';
 import Button from '../components/Buttons';
+import Education from '../components/Education';
+import Experience from '../components/Experience';
 
 const ExpEdu: FC = () => {
     const [activeTab, setActiveTab] = useState<'experience' | 'education'>('experience');
 
     return (
-        <main className='h-[1120px] bg-primary flex flex-col justify-start items-center p-6'>
+        <main className='h-full bg-primary flex flex-col justify-start items-center p-6'>
+            {/* Tab Buttons */}
             <div className='flex gap-5'>
                 <Button
                     text='EXPERIENCE'
@@ -25,20 +28,17 @@ const ExpEdu: FC = () => {
                 />
             </div>
 
-            <div className='mt-5'>
+            {/* Tab Content */}
+            <div className='mt-5 w-full'>
                 {activeTab === 'experience' && (
-                    <div>
-                        <p className='text-secondary'>Experience content goes here...</p>
-                    </div>
+                    <Experience />
                 )}
                 {activeTab === 'education' && (
-                    <div>
-                        <p className='text-secondary'>Education content goes here...</p>
-                    </div>
+                    <Education />
                 )}
             </div>
         </main>
     );
-}
+};
 
 export default ExpEdu;
