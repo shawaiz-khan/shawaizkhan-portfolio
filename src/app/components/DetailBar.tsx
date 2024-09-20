@@ -20,7 +20,7 @@ const DetailBar: React.FC = () => {
             <motion.div
                 initial={{ x: '100%' }}
                 animate={isPaused ? { x: 0 } : { x: '-100%' }}
-                transition={{ duration: 10, ease: 'linear', repeat: Infinity }}
+                transition={{ duration: 15, ease: 'linear', repeat: Infinity }}
                 className='flex items-end mx-6 font-fira'
                 onMouseEnter={() => setIsPaused(true)}
                 onMouseLeave={() => setIsPaused(false)}
