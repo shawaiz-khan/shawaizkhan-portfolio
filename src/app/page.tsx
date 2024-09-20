@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <main>
       <Hero />
-      <DetailBar text={['Hi', 'Hello', 'Bye']} number={[12, 13, 14]} />
+      <DetailBar />
     </main>
   );
 }
