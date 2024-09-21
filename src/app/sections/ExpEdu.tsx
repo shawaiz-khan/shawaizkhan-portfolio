@@ -9,8 +9,7 @@ const ExpEdu: FC = () => {
     const [activeTab, setActiveTab] = useState<'experience' | 'education'>('experience');
 
     return (
-        <main className='h-full bg-primary flex flex-col justify-start items-center p-6'>
-            {/* Tab Buttons */}
+        <main className='h-full bg-primary flex flex-col justify-center items-center p-6'>
             <div className='flex gap-5'>
                 <Button
                     text='EXPERIENCE'
@@ -28,7 +27,6 @@ const ExpEdu: FC = () => {
                 />
             </div>
 
-            {/* Tab Content */}
             <div className='mt-5 w-full'>
                 {activeTab === 'experience' && (
                     <Experience />

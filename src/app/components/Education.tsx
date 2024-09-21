@@ -6,7 +6,6 @@ const RenderEducationData = ({ data }: { data: IEducation[] }) => {
         <div key={index} className="flex flex-col sm:flex-row w-full mb-10">
             {index % 2 === 0 ? (
                 <>
-                    {/* Left Side Card */}
                     <div className="sm:hidden">
                         <div className={`h-[18px] w-[18px] rounded-full bg-secondary mx-auto ${index !== 0 && 'hidden'}`}></div>
                         <div className={`w-[6px] h-10 bg-secondary mx-auto ${index === 0 && '-mt-1'}`}></div>
@@ -24,13 +23,13 @@ const RenderEducationData = ({ data }: { data: IEducation[] }) => {
                                 <div className="font-bold text-md">{item.degree}</div>
                                 <div className="font-medium text-secondary text-sm tracking-wider">{item.institution}</div>
                             </div>
-                            <div className="text-secondary text-sm leading-6 sm:text-base">{item.score}</div>
+                            <div className="text-secondary text-sm leading-6 sm:text-base mt-2">{item.details}</div>
                         </div>
                     </div>
 
                     <div className="w-[10%] mx-2 sm:w-1/5 sm:flex justify-center hidden">
                         <div className="relative flex h-full w-1 bg-secondary items-center justify-center">
-                            <div className="absolute flex flex-col justify-center sm:h-24 sm:w-24 rounded-full leading-none text-center z-10 bg-rich-black font-thin">
+                            <div className="absolute -left-12 transform translate-x-0 flex flex-col items-center justify-center sm:h-24 sm:w-24 rounded-full leading-none text-center z-10 bg-primary">
                                 <div className="font-semibold text-[12px] sm:text-sm text-secondary opacity-80">{item.startDate}</div>
                                 <div className="font-medium my-1 text-[12px] sm:text-sm text-secondary opacity-80">|</div>
                                 <div className="font-semibold text-[12px] sm:text-sm text-secondary opacity-80">{item.endDate}</div>
@@ -42,7 +41,6 @@ const RenderEducationData = ({ data }: { data: IEducation[] }) => {
                 </>
             ) : (
                 <>
-                    {/* Right Side Card */}
                     <div className="sm:hidden">
                         <div className={`w-[6px] h-10 bg-secondary mx-auto ${index === 0 && '-mt-1'}`}></div>
                         <div className="w-20 h-20 rounded-full flex flex-col items-center justify-center mx-auto">
@@ -57,7 +55,7 @@ const RenderEducationData = ({ data }: { data: IEducation[] }) => {
 
                     <div className="w-[10%] mx-2 sm:w-1/5 sm:flex justify-center hidden">
                         <div className="relative flex h-full w-1 bg-secondary items-center justify-center">
-                            <div className="absolute flex flex-col justify-center sm:h-24 sm:w-24 rounded-full leading-none text-center z-10 bg-rich-black font-thin">
+                            <div className="absolute -right-12 transform translate-x-0 flex flex-col items-center justify-center sm:h-24 sm:w-24 rounded-full leading-none text-center z-10 bg-primary">
                                 <div className="font-semibold text-[12px] sm:text-sm text-secondary opacity-80">{item.startDate}</div>
                                 <div className="font-medium my-1 text-[12px] sm:text-sm text-secondary opacity-80">|</div>
                                 <div className="font-semibold text-[12px] sm:text-sm text-secondary opacity-80">{item.endDate}</div>
@@ -71,7 +69,7 @@ const RenderEducationData = ({ data }: { data: IEducation[] }) => {
                                 <div className="font-bold text-md">{item.degree}</div>
                                 <div className="font-medium text-secondary text-sm tracking-wider">{item.institution}</div>
                             </div>
-                            <div className="text-secondary text-sm leading-6 sm:text-base">{item.score}</div>
+                            <div className="text-secondary text-sm leading-6 sm:text-base mt-2">{item.details}</div>
                         </div>
                     </div>
                 </>

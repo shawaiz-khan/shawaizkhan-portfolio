@@ -1,39 +1,46 @@
 export const EXPERIENCE: IExperience[] = [
     {
-        role: "Freelance Web Developer & Designer",
-        company: "Self-employed",
-        duration: "Feb 2019 - Present",
-        responsibilities: [
-            "Developed 20+ custom websites for various clients",
-            "Managed full lifecycle from design to deployment",
-            "Ensured high client satisfaction by delivering tailored web and graphic solutions",
-        ],
-    },
-    {
-        role: "Manager & CEO",
-        company: "Infinity Shadow",
-        duration: "Feb 2021 - Sep 2024",
-        responsibilities: [
-            "Led a web development and design agency",
-            "Oversaw operations, client interactions, and mentoring interns",
-            "Delivered tailored web solutions to clients globally",
-        ],
-    },
-    {
-        role: "Frontend Web Developer",
+        role: "Frontend Web Developer Intern",
         company: "MAZIV Technologies",
-        duration: "Jun 2024 - Sep 2024",
+        startDate: "Jun 2024",
+        endDate: "Sep 2024",
         responsibilities: [
-            "Contributed to improving web applications by fixing bugs",
-            "Added new features, working closely with developers and designers",
+            "Helped improve web applications by fixing issues",
+            "Worked with developers and designers to add new features",
+            "Participated in code reviews to ensure quality",
+            "Learned and applied best practices in frontend development",
         ],
     },
+    {
+        role: "UI UX Intern",
+        company: "If You Know (IYK)",
+        startDate: "March 2024",
+        endDate: "April 2024",
+        responsibilities: [
+            "Helped design and build easy-to-use interfaces for websites",
+            "Did user research and testing to get feedback for improvements",
+            "Worked with the design team to create wireframes and prototypes",
+            "Joined team meetings to talk about project progress and solutions",
+        ],
+    },
+    // {
+    //     role: "Freelance Web Developer",
+    //     company: "Upwork & Fiverr",
+    //     startDate: "Feb 2019",
+    //     endDate: "Present",
+    //     responsibilities: [
+    //         "Built over 20 custom websites for different clients",
+    //         "Handled everything from design to launch",
+    //         "Ensured high client satisfaction through tailored solutions",
+    //         "Managed client communication throughout the project lifecycle",
+    //     ],
+    // },
 ];
 
-// Interface for Experience
 export interface IExperience {
     role: string;
     company: string;
-    duration: string;
+    startDate: string;
+    endDate: string;
     responsibilities: string[];
 }
