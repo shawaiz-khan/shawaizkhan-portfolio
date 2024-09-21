@@ -3,7 +3,7 @@ import { skillsData } from '../assets/data/Skills';
 
 const Skills: React.FC = () => {
     return (
-        <div className='bg-secondary h-auto p-10 flex flex-col justify-center items-center gap-20'>
+        <div className='bg-secondary h-auto px-10 py-20 flex flex-col justify-center items-center gap-20'>
             <h1 className='text-3xl font-bold text-white mb-4'>MY SKILLS</h1>
             <article className='flex flex-col gap-10'>
                 {Object.entries(skillsData).map(([category, items]) => (
