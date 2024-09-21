@@ -23,7 +23,7 @@ Welcome to my portfolio repository! This project showcases my skills and experie
 - **Tools:** Git, GitHub, Vercel
 
 ## 🎥 Demo
-You can view the live demo of my portfolio [here](https://your-portfolio-link.com).
+You can view the live demo of my portfolio [here](#).
 
 ## 🚀 Getting Started
 To view the project locally, follow these steps:
@@ -50,7 +50,7 @@ To view the project locally, follow these steps:
 
 ## 📫 Contact
 Feel free to reach out to me for any inquiries or collaborations:
-- Email: your-email@example.com
-- LinkedIn: [Your LinkedIn Profile](https://linkedin.com/in/yourprofile)
+- Email: shawaizkhan.biz@gmail.com
+- LinkedIn: [Shawaiz Khan](https://www.linkedin.com/in/bizshawaizkhan/)
 
 Thank you for visiting my portfolio!
