@@ -9,7 +9,7 @@ const ExpEdu: FC = () => {
     const [activeTab, setActiveTab] = useState<'experience' | 'education'>('experience');
 
     return (
-        <main className='h-full bg-primary flex flex-col justify-center items-center p-6'>
+        <main className='h-full bg-primary flex flex-col justify-center items-center p-10'>
             <div className='flex gap-5'>
                 <Button
                     text='EXPERIENCE'

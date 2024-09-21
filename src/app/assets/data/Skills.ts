@@ -22,6 +22,7 @@ export const skillsData = {
         "Git",
         "GitHub",
         "Docker",
+        "WordPress",
         "VS Code",
         "Dev C++",
         "Vercel",
@@ -33,6 +34,5 @@ export const skillsData = {
         "Troubleshooting",
         "Branding",
         "Adobe Creative Suite",
-        "WordPress",
     ],
 };
