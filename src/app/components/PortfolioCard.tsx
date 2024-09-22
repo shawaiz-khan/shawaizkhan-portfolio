@@ -1,5 +1,4 @@
 import Image, { StaticImageData } from 'next/image';
-import Link from 'next/link';
 import React from 'react';
 
 interface Project {
@@ -52,16 +51,18 @@ const PortfolioCard: React.FC<PortfolioCardProps> = ({ title, description, categ
                 >
                     Read More
                 </button>
-                <Link href={github} passHref>
-                    <button className='bg-secondary text-primary text-sm font-inter px-4 py-3 rounded hover:bg-highlight transition duration-150 ease-in hover:-translate-y-2'>
-                        GitHub
-                    </button>
-                </Link>
-                <Link href={demo} passHref>
-                    <button className='bg-secondary text-primary text-sm font-inter px-4 py-3 rounded hover:bg-highlight transition duration-150 ease-in hover:-translate-y-2'>
-                        See Demo
-                    </button>
-                </Link>
+                <button
+                    className='bg-secondary text-primary text-sm font-inter px-4 py-3 rounded hover:bg-highlight transition duration-150 ease-in hover:-translate-y-2'
+                    onClick={() => window.open(github, '_blank', 'noopener,noreferrer')}
+                >
+                    GitHub
+                </button>
+                <button
+                    className='bg-secondary text-primary text-sm font-inter px-4 py-3 rounded hover:bg-highlight transition duration-150 ease-in hover:-translate-y-2'
+                    onClick={() => window.open(demo, '_blank', 'noopener,noreferrer')}
+                >
+                    See Demo
+                </button>
             </div>
         </article>
     );

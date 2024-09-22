@@ -19,8 +19,8 @@ const DetailBar: React.FC = () => {
         <article className='h-24 bg-secondary flex items-center overflow-hidden shadow-md'>
             <motion.div
                 initial={{ x: '100%' }}
-                animate={{ x: isPaused ? '0%' : '-100%' }}
-                transition={{ duration: isPaused ? 0 : 15, ease: 'linear', repeat: Infinity }}
+                animate={{ x: isPaused ? '100%' : '-100%' }}
+                transition={{ duration: isPaused ? 10 : 15, ease: 'linear', repeat: Infinity }}
                 className='flex items-end mx-6 font-fira'
                 onMouseEnter={() => setIsPaused(true)}
                 onMouseLeave={() => setIsPaused(false)}
