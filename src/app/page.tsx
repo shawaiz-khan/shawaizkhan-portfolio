@@ -5,6 +5,7 @@ import About from './sections/About';
 import ExpEdu from './sections/ExpEdu';
 import Skills from './sections/Skills';
 import Portfolio from './sections/Portfolio';
+import Testimonials from './sections/Testimonials';
 
 export default function Home() {
   return (
@@ -12,9 +13,10 @@ export default function Home() {
       <Hero />
       <DetailBar />
       <About />
-      <ExpEdu />
       <Skills />
+      <ExpEdu />
       <Portfolio />
+      <Testimonials />
     </main>
   );
 }

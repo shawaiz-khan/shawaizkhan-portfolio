@@ -10,6 +10,7 @@
       {
         "list": "off"
       }
-    ]
+    ],
+    "axe/aria": "off"
   }
 }
