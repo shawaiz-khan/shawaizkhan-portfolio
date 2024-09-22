@@ -29,7 +29,7 @@ const Portfolio: React.FC = () => {
     }
 
     return (
-        <main className='p-6 bg-lightGray'>
+        <main className='p-10 bg-lightGray'>
             <h1 className='font-poppins font-bold text-5xl text-secondary text-center mb-8'>PROJECTS</h1>
             <div className='flex flex-wrap gap-5 justify-center'>
                 {projects.map((project, index) => (
