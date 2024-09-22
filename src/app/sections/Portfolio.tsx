@@ -1,45 +1,47 @@
-'use client'
+'use client';
 
 import React, { useState } from 'react';
 import PortfolioCard from '../components/PortfolioCard';
-// import Image from '../assets/images/placeholder.jpg';
 import ProjectPopup from '../components/ProjectPopup';
-import projects from '../assets/data/Projects'
+import projects from '../assets/data/Projects';
+import { StaticImageData } from 'next/image';
 
-// const projects = Array(6).fill({
-//     title: "Project Title",
-//     description: "A brief description of the project.",
-//     category: "Web Development",
-//     image: {
-//         src: Image,
-//     }
-// });
+interface Project {
+    title: string;
+    description: string;
+    category: string;
+    image: { src: StaticImageData };
+    github: string;
+    demo: string;
+}
 
 const Portfolio: React.FC = () => {
-    const [isPopup, setIsPopup] = useState(false);
-    const [selectedProject, setSelectedProject] = useState(null);
+    const [isPopup, setIsPopup] = useState<boolean>(false);
+    const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
-    const handlePopup = (project) => {
+    const handlePopup = (project: Project) => {
         setSelectedProject(project);
-        setIsPopup(!isPopup);
-    }
+        setIsPopup(true);
+    };
 
     const handlePopupClose = () => {
         setSelectedProject(null);
-        setIsPopup(!isPopup);
-    }
+        setIsPopup(false);
+    };
 
     return (
         <main className='p-10 bg-lightGray'>
             <h1 className='font-poppins font-bold text-5xl text-secondary text-center mb-8'>PROJECTS</h1>
             <div className='flex flex-wrap gap-5 justify-center'>
-                {projects.map((project, index) => (
+                {projects.map((project: Project, index: number) => (
                     <PortfolioCard
                         key={index}
                         title={project.title}
                         description={project.description}
                         category={project.category}
                         image={project.image}
+                        github={project.github}
+                        demo={project.demo}
                         onReadMore={handlePopup}
                     />
                 ))}
@@ -49,6 +51,6 @@ const Portfolio: React.FC = () => {
             )}
         </main>
     );
-}
+};
 
 export default Portfolio;

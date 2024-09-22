@@ -1,20 +1,31 @@
 import Image, { StaticImageData } from 'next/image';
+import Link from 'next/link';
 import React from 'react';
+
+interface Project {
+    title: string;
+    description: string;
+    category: string;
+    image: { src: StaticImageData };
+    github: string;
+    demo: string;
+}
 
 interface PortfolioCardProps {
     title: string;
     description: string;
     category: string;
-    image: { src: StaticImageData; };
-    onReadMore: (project: { title: string; description: string; category: string; image: { src: StaticImageData; } }) => void;
+    image: { src: StaticImageData };
+    github: string;
+    demo: string;
+    onReadMore: (project: Project) => void;
 }
 
-const PortfolioCard: React.FC<PortfolioCardProps> = ({ title, description, category, image, onReadMore }) => {
+const PortfolioCard: React.FC<PortfolioCardProps> = ({ title, description, category, image, onReadMore, github, demo }) => {
     const handleReadMore = () => {
-        onReadMore({ title, description, category, image });
-    }
+        onReadMore({ title, description, category, image, github, demo });
+    };
 
-    // Limit the description to a certain length
     const shortDescription = description.length > 100 ? description.substring(0, 100) + '...' : description;
 
     return (
@@ -41,12 +52,16 @@ const PortfolioCard: React.FC<PortfolioCardProps> = ({ title, description, categ
                 >
                     Read More
                 </button>
-                <button className='bg-secondary text-primary text-sm font-inter px-4 py-3 rounded hover:bg-highlight transition duration-150 ease-in hover:-translate-y-2'>
-                    GitHub
-                </button>
-                <button className='bg-secondary text-primary text-sm font-inter px-4 py-3 rounded hover:bg-highlight transition duration-150 ease-in hover:-translate-y-2'>
-                    See Demo
-                </button>
+                <Link href={github} passHref>
+                    <button className='bg-secondary text-primary text-sm font-inter px-4 py-3 rounded hover:bg-highlight transition duration-150 ease-in hover:-translate-y-2'>
+                        GitHub
+                    </button>
+                </Link>
+                <Link href={demo} passHref>
+                    <button className='bg-secondary text-primary text-sm font-inter px-4 py-3 rounded hover:bg-highlight transition duration-150 ease-in hover:-translate-y-2'>
+                        See Demo
+                    </button>
+                </Link>
             </div>
         </article>
     );

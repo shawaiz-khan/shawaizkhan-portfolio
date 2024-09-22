@@ -5,7 +5,9 @@ export interface IProjects {
     title: string;
     description: string;
     category: string;
-    image: { src: StaticImageData }
+    image: { src: StaticImageData };
+    github: string;
+    demo: string;
 }
 
 const projects: IProjects[] = [
@@ -16,6 +18,8 @@ const projects: IProjects[] = [
         image: {
             src: Image,
         },
+        github: "https://github.com/shawaiz-khan",
+        demo: "https://devdigitals.org/",
     },
     {
         title: "E-commerce Store",
@@ -24,6 +28,8 @@ const projects: IProjects[] = [
         image: {
             src: Image,
         },
+        github: "https://github.com/shawaiz-khan",
+        demo: "https://devdigitals.org/",
     },
     {
         title: "Blog Platform",
@@ -32,6 +38,8 @@ const projects: IProjects[] = [
         image: {
             src: Image,
         },
+        github: "https://github.com/shawaiz-khan",
+        demo: "https://devdigitals.org/",
     },
     {
         title: "Task Management App",
@@ -40,6 +48,8 @@ const projects: IProjects[] = [
         image: {
             src: Image,
         },
+        github: "https://github.com/shawaiz-khan",
+        demo: "https://devdigitals.org/",
     },
     {
         title: "Social Media Dashboard",
@@ -48,6 +58,8 @@ const projects: IProjects[] = [
         image: {
             src: Image,
         },
+        github: "https://github.com/shawaiz-khan",
+        demo: "https://devdigitals.org/",
     },
     {
         title: "Graphic Design Portfolio",
@@ -56,6 +68,8 @@ const projects: IProjects[] = [
         image: {
             src: Image,
         },
+        github: "https://github.com/shawaiz-khan",
+        demo: "https://devdigitals.org/",
     },
     {
         title: "UI/UX Design Project",
@@ -64,6 +78,8 @@ const projects: IProjects[] = [
         image: {
             src: Image,
         },
+        github: "https://github.com/shawaiz-khan",
+        demo: "https://devdigitals.org/",
     },
     {
         title: "Restaurant Website",
@@ -72,6 +88,8 @@ const projects: IProjects[] = [
         image: {
             src: Image,
         },
+        github: "https://github.com/shawaiz-khan",
+        demo: "https://devdigitals.org/",
     },
     {
         title: "Photography Website",
@@ -80,6 +98,8 @@ const projects: IProjects[] = [
         image: {
             src: Image,
         },
+        github: "https://github.com/shawaiz-khan",
+        demo: "https://devdigitals.org/",
     },
     {
         title: "Chat Application",
@@ -88,6 +108,8 @@ const projects: IProjects[] = [
         image: {
             src: Image,
         },
+        github: "https://github.com/shawaiz-khan",
+        demo: "https://devdigitals.org/",
     },
 ];
 
