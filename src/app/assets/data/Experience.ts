@@ -1,4 +1,16 @@
 export const EXPERIENCE: IExperience[] = [
+    // {
+    //     role: "Freelance Web Developer",
+    //     company: "Upwork & Fiverr",
+    //     startDate: "Feb 2022",
+    //     endDate: "Present",
+    //     responsibilities: [
+    //         "Built over 20 custom websites for different clients",
+    //         "Handled everything from design to launch",
+    //         "Ensured high client satisfaction through tailored solutions",
+    //         "Managed client communication throughout the project lifecycle",
+    //     ],
+    // },
     {
         role: "Frontend Web Developer Intern",
         company: "MAZIV Technologies",
@@ -13,7 +25,7 @@ export const EXPERIENCE: IExperience[] = [
     },
     {
         role: "UI UX Intern",
-        company: "If You Know (IYK)",
+        company: "If You Know (IfYK)",
         startDate: "March 2024",
         endDate: "April 2024",
         responsibilities: [
@@ -23,18 +35,6 @@ export const EXPERIENCE: IExperience[] = [
             "Joined team meetings to talk about project progress and solutions",
         ],
     },
-    // {
-    //     role: "Freelance Web Developer",
-    //     company: "Upwork & Fiverr",
-    //     startDate: "Feb 2019",
-    //     endDate: "Present",
-    //     responsibilities: [
-    //         "Built over 20 custom websites for different clients",
-    //         "Handled everything from design to launch",
-    //         "Ensured high client satisfaction through tailored solutions",
-    //         "Managed client communication throughout the project lifecycle",
-    //     ],
-    // },
 ];
 
 export interface IExperience {
