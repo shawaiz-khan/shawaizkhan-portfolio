@@ -46,11 +46,11 @@ const ProjectPopup: React.FC<ProjectPopupProps> = ({ project, onClose }) => {
                         <li className="mt-2">{description}</li>
                     </ul>
                     <div className='flex justify-start z-10 w-full gap-5'>
-                        <button className='flex items-center bg-transparent shadow-lg text-highlight text-sm font-inter font-bold px-4 py-3 rounded hover:bg-highlight hover:text-primary transition duration-150 ease-in'>
+                        <button className='flex items-center bg-transparent shadow-lg text-highlight text-sm font-inter font-bold px-4 py-3 rounded hover:bg-highlight hover:text-primary transition duration-150 ease-in hover:-translate-y-2'>
                             GitHub
                             <FaGithub className='ml-2' />
                         </button>
-                        <button className='flex items-center bg-transparent shadow-lg text-highlight text-sm font-inter font-bold px-4 py-3 rounded hover:bg-highlight hover:text-primary transition duration-150 ease-in'>
+                        <button className='flex items-center bg-transparent shadow-lg text-highlight text-sm font-inter font-bold px-4 py-3 rounded hover:bg-highlight hover:text-primary transition duration-150 ease-in hover:-translate-y-2'>
                             See Demo
                             <FaExternalLinkAlt className='ml-2' />
                         </button>

@@ -2,17 +2,18 @@
 
 import React, { useState } from 'react';
 import PortfolioCard from '../components/PortfolioCard';
-import Image from '../assets/images/placeholder.jpg';
+// import Image from '../assets/images/placeholder.jpg';
 import ProjectPopup from '../components/ProjectPopup';
+import projects from '../assets/data/Projects'
 
-const projects = Array(6).fill({
-    title: "Project Title",
-    description: "A brief description of the project.",
-    category: "Web Development",
-    image: {
-        src: Image,
-    }
-});
+// const projects = Array(6).fill({
+//     title: "Project Title",
+//     description: "A brief description of the project.",
+//     category: "Web Development",
+//     image: {
+//         src: Image,
+//     }
+// });
 
 const Portfolio: React.FC = () => {
     const [isPopup, setIsPopup] = useState(false);

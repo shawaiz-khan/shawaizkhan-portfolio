@@ -1,16 +1,16 @@
 export const EXPERIENCE: IExperience[] = [
-    // {
-    //     role: "Freelance Web Developer",
-    //     company: "Upwork & Fiverr",
-    //     startDate: "Feb 2022",
-    //     endDate: "Present",
-    //     responsibilities: [
-    //         "Built over 20 custom websites for different clients",
-    //         "Handled everything from design to launch",
-    //         "Ensured high client satisfaction through tailored solutions",
-    //         "Managed client communication throughout the project lifecycle",
-    //     ],
-    // },
+    {
+        role: "Freelance Web Developer",
+        company: "Local Businesses",
+        startDate: "Feb 2022",
+        endDate: "Present",
+        responsibilities: [
+            "Built over 20 custom websites for different clients",
+            "Handled everything from design to launch",
+            "Ensured high client satisfaction through tailored solutions",
+            "Managed client communication throughout the project lifecycle",
+        ],
+    },
     {
         role: "Frontend Web Developer Intern",
         company: "MAZIV Technologies",

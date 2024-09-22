@@ -1,6 +1,4 @@
-import image from 'next/image';
 import Image, { StaticImageData } from 'next/image';
-import { title } from 'process';
 import React from 'react';
 
 interface PortfolioCardProps {
@@ -13,8 +11,11 @@ interface PortfolioCardProps {
 
 const PortfolioCard: React.FC<PortfolioCardProps> = ({ title, description, category, image, onReadMore }) => {
     const handleReadMore = () => {
-        onReadMore({ title, description, category, image })
+        onReadMore({ title, description, category, image });
     }
+
+    // Limit the description to a certain length
+    const shortDescription = description.length > 100 ? description.substring(0, 100) + '...' : description;
 
     return (
         <article className='min-w-[330px] max-w-[330px] bg-lightGray shadow-lg text-secondary p-4 flex flex-col rounded-xl relative'>
@@ -31,19 +32,19 @@ const PortfolioCard: React.FC<PortfolioCardProps> = ({ title, description, categ
             <div className='flex flex-col flex-grow text-left z-10'>
                 <div className='font-medium font-inter border border-highlight w-fit px-2 py-1 rounded-full text-xs mb-2 cursor-pointer'>{category}</div>
                 <h2 className='text-lg font-bold font-poppins mb-1'>{title}</h2>
-                <p className='text-sm'>{description}</p>
+                <p className='text-sm'>{shortDescription}</p>
             </div>
             <div className='flex justify-between mt-4 z-10'>
                 <button
-                    className='bg-secondary text-primary text-sm font-inter px-4 py-3 rounded hover:bg-highlight transition duration-150 ease-in'
+                    className='bg-secondary text-primary text-sm font-inter px-4 py-3 rounded hover:bg-highlight transition duration-150 ease-in hover:-translate-y-2'
                     onClick={handleReadMore}
                 >
                     Read More
                 </button>
-                <button className='bg-secondary text-primary text-sm font-inter px-4 py-3 rounded hover:bg-highlight transition duration-150 ease-in'>
+                <button className='bg-secondary text-primary text-sm font-inter px-4 py-3 rounded hover:bg-highlight transition duration-150 ease-in hover:-translate-y-2'>
                     GitHub
                 </button>
-                <button className='bg-secondary text-primary text-sm font-inter px-4 py-3 rounded hover:bg-highlight transition duration-150 ease-in'>
+                <button className='bg-secondary text-primary text-sm font-inter px-4 py-3 rounded hover:bg-highlight transition duration-150 ease-in hover:-translate-y-2'>
                     See Demo
                 </button>
             </div>
