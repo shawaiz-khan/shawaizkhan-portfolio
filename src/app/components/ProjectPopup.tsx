@@ -34,7 +34,7 @@ const ProjectPopup: React.FC<ProjectPopupProps> = ({ project, onClose }) => {
                         <Image
                             src={image.src}
                             alt={title}
-                            layout="intrinsic"
+                            style={{ width: '100%', height: 'auto' }}
                             className='rounded-md'
                             priority
                         />

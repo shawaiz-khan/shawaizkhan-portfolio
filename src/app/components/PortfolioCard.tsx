@@ -34,7 +34,7 @@ const PortfolioCard: React.FC<PortfolioCardProps> = ({ title, description, categ
                 <Image
                     src={image.src}
                     alt={title}
-                    layout="fill"
+                    style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
                     className='object-cover rounded-md'
                     priority
                 />

@@ -20,10 +20,17 @@ const DetailBar: React.FC = () => {
             <motion.div
                 initial={{ x: '100%' }}
                 animate={{ x: isPaused ? '100%' : '-100%' }}
-                transition={{ duration: isPaused ? 10 : 15, ease: 'linear', repeat: Infinity }}
+                transition={{
+                    duration: isPaused ? 90 : 20,
+                    ease: 'linear',
+                    repeat: Infinity,
+                }}
                 className='flex items-end mx-6 font-fira'
                 onMouseEnter={() => setIsPaused(true)}
-                onMouseLeave={() => setIsPaused(false)}
+                onMouseLeave={() => {
+                    setIsPaused(false);
+                    setTimeout(() => {}, 0);
+                }}
             >
                 {details.map((detail, index) => (
                     <div key={index} className='flex items-end mx-6'>
