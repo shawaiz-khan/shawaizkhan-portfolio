@@ -6,12 +6,23 @@ import { HiMenu, HiX } from 'react-icons/hi';
 const NavBar: FC = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [isSticky, setIsSticky] = useState(false);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const menuToggle = () => setIsOpen(!isOpen);
 
     const handleScroll = () => {
         const scrollTop = window.scrollY;
         setIsSticky(scrollTop > 50);
+    };
+
+    const handleMouseEnter = () => {
+        setIsMenuOpen(true);
+    };
+
+    const handleMouseLeave = () => {
+        setTimeout(() => {
+            setIsMenuOpen(false);
+        }, 3000);
     };
 
     useEffect(() => {
@@ -36,13 +47,21 @@ const NavBar: FC = () => {
                     <li className='font-semibold cursor-pointer relative hover:text-highlight transition-all duration-200 ease-in before:content-[""] before:absolute before:left-0 before:bottom-0 before:w-full before:h-0.5 before:bg-highlight before:scale-x-0 hover:before:scale-x-100 before:transition-transform before:duration-200'>
                         HOME
                     </li>
-                    <li className='relative group'>
-                        <button className='font-semibold relative z-10 text-primary hover:text-highlight transition-all duration-200 ease-in before:content-[""] before:absolute before:left-0 before:bottom-0 before:w-full before:h-0.5 before:bg-highlight before:scale-x-0 hover:before:scale-x-100 before:transition-transform before:duration-200'>
+                    <li className="relative group">
+                        <button
+                            className='font-semibold relative z-10 text-primary hover:text-highlight transition-all duration-200 ease-in before:content-[""] before:absolute before:left-0 before:bottom-0 before:w-full before:h-0.5 before:bg-highlight before:scale-x-0 hover:before:scale-x-100 before:transition-transform before:duration-200'
+                            onMouseEnter={handleMouseEnter}
+                            onMouseLeave={handleMouseLeave}
+                        >
                             ABOUT
                         </button>
-                        <ul className='absolute top-full left-0 mt-2 bg-secondary text-primary w-48 border border-highlight rounded-md shadow-md opacity-0 group-hover:opacity-100 transition-opacity duration-200 ease-in'>
-                            <li className='font-semibold p-2 hover:bg-highlight hover:text-secondary cursor-pointer transition-all duration-200 ease-in'>Experience</li>
-                            <li className='font-semibold p-2 hover:bg-highlight hover:text-secondary cursor-pointer transition-all duration-200 ease-in'>Education</li>
+                        <ul className={`absolute top-full left-0 transform -translate-x-1/2 mt-2 bg-secondary text-primary w-48 ${isMenuOpen ? 'opacity-100' : 'opacity-0'} border border-highlight rounded-md shadow-md transition-opacity duration-200 ease-in`}>
+                            <li className='font-semibold p-2 hover:bg-highlight hover:text-secondary cursor-pointer transition-all duration-200 ease-in'>
+                                Experience
+                            </li>
+                            <li className='font-semibold p-2 hover:bg-highlight hover:text-secondary cursor-pointer transition-all duration-200 ease-in'>
+                                Education
+                            </li>
                         </ul>
                     </li>
                     <li className='font-semibold cursor-pointer relative hover:text-highlight transition-all duration-200 ease-in before:content-[""] before:absolute before:left-0 before:bottom-0 before:w-full before:h-0.5 before:bg-highlight before:scale-x-0 hover:before:scale-x-100 before:transition-transform before:duration-200'>
