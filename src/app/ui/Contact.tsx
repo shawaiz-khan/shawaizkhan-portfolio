@@ -4,6 +4,8 @@ import React from 'react';
 import Button from '../components/Buttons';
 import { AiOutlinePhone, AiOutlineMail } from 'react-icons/ai';
 import { MdOutlineLocationOn } from 'react-icons/md';
+import Image from 'next/image';
+import formLottie from '../assets/animations/formAnim.gif'
 
 const Contact: React.FC = () => {
     return (
@@ -13,7 +15,7 @@ const Contact: React.FC = () => {
                     <h2 className='text-2xl font-bold font-poppins mb-4'>Contact Us</h2>
                     <div className="contact-options flex flex-col gap-4 w-full">
                         <div className='flex gap-3 items-center'>
-                            <MdOutlineLocationOn 
+                            <MdOutlineLocationOn
                                 size={35}
                                 className='bg-gray-800 rounded-full p-2 text-highlight shadow-md'
                             />
@@ -33,6 +35,13 @@ const Contact: React.FC = () => {
                             />
                             <p className='text-primary text-sm font-medium'>+92 328 852 8854</p>
                         </div>
+                    </div>
+                    <div className='w-full flex justify-center items-center'>
+                        <Image
+                            src={formLottie}
+                            alt='Contact us'
+                            width={150}
+                        />
                     </div>
                 </article>
                 <article className='bg-lightGray h-fit w-2/5 rounded-r-lg p-5 flex flex-col justify-center -ml-5 shadow-lg'>
