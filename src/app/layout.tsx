@@ -1,9 +1,13 @@
-import type { Metadata } from "next";
+'use client';
+
 import localFont from "next/font/local";
 import "./globals.css";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import GoToTop from "./components/GoToTop";
+import { useState, useEffect } from "react";
+import MobileWarning from "./components/MobileWarning";
+import { metadata } from './metadata';
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -16,23 +20,37 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
-export const metadata: Metadata = {
-  title: "Shawaiz Khan - Frontend Web Developer",
-  description: "I am shawaiz khan a frontend web developer specialized in react, tailwindcss, nextjs and node",
-};
-
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <NavBar />
-        {children}
-        <Footer />
-        <GoToTop />
+        {isMobile ? (
+          <MobileWarning />
+        ) : (
+          <>
+            <NavBar />
+            {children}
+            <Footer />
+            <GoToTop />
+          </>
+        )}
       </body>
     </html>
   );
