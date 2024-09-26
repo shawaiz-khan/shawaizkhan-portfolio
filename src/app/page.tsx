@@ -1,12 +1,12 @@
 import * as React from 'react';
-import Hero from './sections/Hero';
+import Hero from './ui/Hero'
 import DetailBar from './components/DetailBar';
-import About from './sections/About';
-import ExpEdu from './sections/ExpEdu';
-import Skills from './sections/Skills';
-import Portfolio from './sections/Portfolio';
-import Testimonials from './sections/Testimonials';
-import Contact from './sections/Contact';
+import About from './ui/About'
+import ExpEdu from './ui/ExpEdu'
+import Skills from './ui/Skills'
+import Portfolio from './ui/Portfolio'
+import Testimonials from './ui/Testimonials'
+import Contact from './ui/Contact'
 
 export default function Home() {
   return (
