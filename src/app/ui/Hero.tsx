@@ -1,19 +1,21 @@
 /* eslint-disable react/no-unescaped-entities */
+'use client';
+
 import * as React from 'react';
 import Button from '../components/Buttons';
-import Image from 'next/image';
-import HeroImg from '../assets/images/img-2.png'
+import Lottie from 'lottie-react';
+import animationData from '../assets/animations/person-coding.json';
 import Typewriter from '../components/Typewritter';
 
 const Hero: React.FC = () => {
     return (
-        <div className='p-6 grid grid-cols-2 h-[600px]'>
-            <article className='text-secondary gap-2 flex flex-col justify-center'>
+        <div className='p-6 flex flex-col md:flex-row h-[600px] justify-between items-center'>
+            <article className='text-secondary gap-2 flex flex-col justify-center w-full md:w-1/2'>
                 <span className='text-base font-poppins font-light'>WELCOME TO MY WORLD!</span>
                 <h1 className='text-6xl font-poppins font-bold'>I'M SHAWAIZ KHAN</h1>
                 <h3 className="font-inter text-3xl font-semibold flex gap-2">
                     a
-                    <Typewriter titles={['Frontend Developer', 'Graphic Designer']} />
+                    <Typewriter titles={['Frontend Web Developer', 'Graphic Designer', 'UI/UX Designer']} />
                 </h3>
                 <p className="text-base font-inter font-light">
                     I design and build websites that look great and work smoothly. I focus on making things simple and easy
@@ -32,11 +34,9 @@ const Hero: React.FC = () => {
                     />
                 </div>
             </article>
-            <Image
-                src={HeroImg}
-                alt='Shawaiz Khan'
-                className='max-w-96 h-auto mx-auto my-auto'
-            />
+            <div className="flex justify-center items-center h-3/4 w-fit md:w-1/2">
+                <Lottie animationData={animationData} loop={true} style={{ width: '100%', height: '100%' }} />
+            </div>
         </div>
     );
 }

@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 'use client';
 
+import Head from "next/head";
 import localFont from "next/font/local";
 import "./globals.css";
 import NavBar from "./components/NavBar";
@@ -41,6 +42,10 @@ export default function RootLayout({
 
   return (
     <html lang="en">
+      <Head>
+        <title>{metadata.title}</title>
+        <meta name="description" content={metadata.description} />
+      </Head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {isMobile ? (
           <MobileWarning />
