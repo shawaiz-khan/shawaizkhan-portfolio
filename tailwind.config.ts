@@ -13,6 +13,8 @@ const config: Config = {
         lightGray: "#F0F4F8",
         secondary: "#1E2A38",
         highlight: "#9A4DFF",
+        darkBackground: "#1A202C",
+        darkText: "#FFFFFF",
       },
       fontFamily: {
         inter: ['Inter', 'sans-serif'],
@@ -21,6 +23,7 @@ const config: Config = {
       },
     },
   },
+  darkMode: 'class',
   plugins: [],
 };
 

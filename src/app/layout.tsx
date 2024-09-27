@@ -10,6 +10,7 @@ import GoToTop from "./components/GoToTop";
 import { useState, useEffect } from "react";
 import MobileWarning from "./components/MobileWarning";
 import { metadata } from './metadata';
+import { ThemeProvider } from './components/ThemeContext';
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -50,12 +51,12 @@ export default function RootLayout({
         {isMobile ? (
           <MobileWarning />
         ) : (
-          <>
+          <ThemeProvider>
             <NavBar />
             {children}
             <Footer />
             <GoToTop />
-          </>
+          </ThemeProvider>
         )}
       </body>
     </html>

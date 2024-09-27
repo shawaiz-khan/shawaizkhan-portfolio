@@ -3,8 +3,11 @@
 import React, { FC } from 'react';
 import animationData from '../assets/animations/quiz-mode-teal-dark.json';
 import Lottie from 'lottie-react';
+import { useTheme } from '../components/ThemeContext';
 
 const About: FC = () => {
+    const { theme } = useTheme();
+
     const headings = [
         "Name:",
         "Location:",
@@ -28,11 +31,11 @@ const About: FC = () => {
     ];
 
     return (
-        <main className='bg-lightGray h-[600px] flex p-6 justify-between items-center gap-5'>
+        <main className={`h-[600px] flex p-6 justify-between items-center gap-5 ${theme === 'light' ? 'bg-lightGray' : 'bg-darkBackground'}`}>
             <div className='flex justify-center items-center h-full w-1/2'>
                 <Lottie animationData={animationData} loop={true} style={{ width: '100%', height: '100%' }} />
             </div>
-            <article className='text-secondary flex flex-col gap-6 w-1/2'>
+            <article className={`flex flex-col gap-6 w-1/2 ${theme === 'light' ? 'text-secondary' : 'text-darkText'}`}>
                 <article className='w-full'>
                     <h1 className='font-poppins font-bold text-5xl'>ABOUT ME</h1>
                     <p className='font-inter font-normal text-lg'>
