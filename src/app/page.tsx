@@ -10,7 +10,7 @@ import Contact from './ui/Contact';
 
 export default function Home() {
   return (
-    <main>
+    <>
       <Hero />
       <DetailBar />
       <About />
@@ -19,6 +19,6 @@ export default function Home() {
       <Portfolio />
       <Testimonials />
       <Contact />
-    </main>
+    </>
   );
 }
