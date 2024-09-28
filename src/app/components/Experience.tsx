@@ -27,7 +27,7 @@ const ExperienceItem: React.FC<{ item: IExperience; index: number }> = ({ item, 
                     </div>
 
                     <div className="w-full sm:w-2/5 md:px-4 sm:py-8">
-                        <div className={`flex flex-col w-full rounded-lg shadow-lg border-[2px] ${theme === 'dark' ? 'border-gray-600' : 'border-highlight'} px-4 py-6 transition-all duration-300 ease-in-out hover:shadow-xl`}>
+                        <div className={`flex flex-col w-full rounded-lg shadow-lg border-[2px] ${theme === 'dark' ? 'border-gray-600' : 'border-secondary'} px-4 py-6 transition-all duration-300 ease-in-out hover:shadow-xl`}>
                             <div className={`mb-3 ${theme === 'dark' ? 'text-gray-200' : 'text-secondary'} transition-colors duration-300`}>
                                 <div className="font-bold text-lg">{item.role}</div>
                                 <div className={`font-medium text-sm tracking-wider ${theme === 'dark' ? 'text-gray-300' : 'text-secondary'}`}>{item.company}</div>
@@ -77,7 +77,7 @@ const ExperienceItem: React.FC<{ item: IExperience; index: number }> = ({ item, 
                     </div>
 
                     <div className="w-full sm:w-2/5 md:px-4 sm:py-10">
-                        <div className={`flex flex-col w-full rounded-lg shadow-lg border-[2px] ${theme === 'dark' ? 'border-gray-600' : 'border-highlight'} px-4 py-6 transition-all duration-300 ease-in-out hover:shadow-xl`}>
+                        <div className={`flex flex-col w-full rounded-lg shadow-lg border-[2px] ${theme === 'dark' ? 'border-gray-600' : 'border-secondary'} px-4 py-6 transition-all duration-300 ease-in-out hover:shadow-xl`}>
                             <div className={`mb-3 ${theme === 'dark' ? 'text-gray-200' : 'text-secondary'} transition-colors duration-300`}>
                                 <div className="font-bold text-lg">{item.role}</div>
                                 <div className={`font-medium text-sm tracking-wider ${theme === 'dark' ? 'text-gray-300' : 'text-secondary'}`}>{item.company}</div>

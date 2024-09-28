@@ -10,7 +10,7 @@ const Skills: React.FC = () => {
 
     return (
         <div className={`h-auto px-10 py-20 flex flex-col justify-center items-center gap-20 ${theme === 'light' ? 'bg-lightGray' : 'bg-darkBackground'}`}>
-            <h1 className={`font-poppins font-bold text-5xl ${theme === "dark" ? 'text-lightGray' : 'text-darkText'} text-center mb-8`}>MY SKILLS</h1>
+            <h1 className={`font-poppins font-bold text-5xl ${theme === "dark" ? 'text-lightGray' : 'text-secondary'} text-center mb-8`}>MY SKILLS</h1>
             <article className="flex flex-col gap-10">
                 {Object.entries(skillsData).map(([category, items]) => (
                     <div key={category} className={`grid grid-cols-[150px_1fr] gap-4 items-center ${theme === 'light' ? 'text-black' : 'text-darkText'}`}>
