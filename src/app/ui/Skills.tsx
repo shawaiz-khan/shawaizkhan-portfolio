@@ -9,7 +9,10 @@ const Skills: React.FC = () => {
     const { theme } = useTheme();
 
     return (
-        <div className={`h-auto px-10 py-20 flex flex-col justify-center items-center gap-20 ${theme === 'light' ? 'bg-lightGray' : 'bg-darkBackground'}`}>
+        <div
+            className={`h-auto px-10 py-20 flex flex-col justify-center items-center gap-20 ${theme === 'light' ? 'bg-lightGray' : 'bg-darkBackground'}`}
+            id='skills'
+        >
             <h1 className={`font-poppins font-bold text-5xl ${theme === "dark" ? 'text-lightGray' : 'text-secondary'} text-center mb-8`}>MY SKILLS</h1>
             <article className="flex flex-col gap-10">
                 {Object.entries(skillsData).map(([category, items]) => (

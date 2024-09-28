@@ -31,7 +31,10 @@ const About: FC = () => {
     ];
 
     return (
-        <main className={`h-[600px] flex flex-col md:flex-row p-6 justify-between items-center w-full gap-14 ${theme === 'light' ? 'bg-lightGray' : 'bg-darkBackground'}`}>
+        <main
+            className={`h-[600px] flex flex-col md:flex-row p-6 justify-between items-center w-full gap-14 ${theme === 'light' ? 'bg-lightGray' : 'bg-darkBackground'}`}
+            id='about'
+        >
             <div className="flex justify-center items-center h-full w-full md:w-1/2">
                 <Lottie animationData={animationData} loop={true} className="w-full h-full max-w-lg" />
             </div>

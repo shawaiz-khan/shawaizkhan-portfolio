@@ -12,7 +12,10 @@ const Contact: React.FC = () => {
     const { theme } = useTheme();
 
     return (
-        <main className={`h-screen p-10 ${theme === 'dark' ? 'bg-darkBackground' : 'bg-primary'}`}>
+        <main
+            className={`h-screen p-10 ${theme === 'dark' ? 'bg-darkBackground' : 'bg-primary'}`}
+            id='contact'
+        >
             <section className='flex justify-center items-center h-full'>
                 <article className={`h-3/4 w-1/4 rounded-lg flex flex-col justify-between items-start p-6 shadow-lg z-10 ${theme === 'light' ? 'bg-secondary' : 'bg-lightGray'}`}>
                     <h2 className={`text-2xl font-bold font-poppins mb-4 ${theme === 'light' ? 'text-lightGray' : 'text-secondary'}`}>Contact</h2>

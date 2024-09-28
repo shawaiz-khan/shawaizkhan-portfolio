@@ -28,7 +28,10 @@ export default function FancyTestimonialsSlider(): JSX.Element {
     }, [autorotate, autorotateTiming, testimonials.length]);
 
     return (
-        <main className={`container w-full h-[600px] ${theme === 'dark' ? 'bg-darkBackground text-lightGray' : 'bg-lightGray text-secondary'} flex flex-col justify-center items-center`}>
+        <main
+            className={`container w-full h-[600px] ${theme === 'dark' ? 'bg-darkBackground text-lightGray' : 'bg-lightGray text-secondary'} flex flex-col justify-center items-center`}
+            id='testimonials'
+        >
             <h1 className={`font-poppins font-bold text-5xl ${theme === 'dark' ? 'text-lightGray' : 'text-secondary'} text-center mb-10`}>TESTIMONIALS</h1>
             <div className="w-full max-w-3xl mx-auto text-center flex flex-col justify-center items-center">
                 <div className="relative h-32">

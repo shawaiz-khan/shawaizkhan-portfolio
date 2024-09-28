@@ -3,7 +3,6 @@ import React, { FC, useState, useEffect } from 'react';
 import { HiMenu, HiX } from 'react-icons/hi';
 import ThemeToggle from './ThemeToggle';
 import { useTheme } from '../components/ThemeContext';
-import { ul, li, span, button } from 'framer-motion/client';
 
 const NavBar: FC = () => {
     const { theme } = useTheme();
@@ -28,6 +27,14 @@ const NavBar: FC = () => {
         }, 2000);
     };
 
+    const scrollToSection = (sectionId: string) => {
+        const section = document.getElementById(sectionId);
+        if (section) {
+            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        setIsOpen(false); // Close mobile menu after click
+    };
+
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
         return () => {
@@ -45,7 +52,7 @@ const NavBar: FC = () => {
                 </div>
 
                 <ul className='font-poppins hidden text-xl gap-7 text-secondary dark:text-darkText md:flex'>
-                    <li className='font-semibold cursor-pointer relative hover:text-highlight transition-all duration-200 ease-in group'>
+                    <li className='font-semibold cursor-pointer relative hover:text-highlight transition-all duration-200 ease-in group' onClick={() => scrollToSection('home')}>
                         HOME
                         <span className="absolute left-1/2 bottom-0 h-[2px] w-0 bg-highlight transition-all duration-300 ease-in-out group-hover:w-full group-hover:left-0"></span>
                     </li>
@@ -54,32 +61,33 @@ const NavBar: FC = () => {
                             className='font-semibold relative group z-10 text-secondary dark:text-darkText hover:text-highlight transition-all duration-200 ease-in'
                             onMouseEnter={handleMouseEnter}
                             onMouseLeave={handleMouseLeave}
+                            onClick={() => scrollToSection('about')}
                         >
                             ABOUT
                             <span className="absolute left-1/2 bottom-0 h-[2px] w-0 bg-highlight transition-all duration-300 ease-in-out group-hover:w-full group-hover:left-0"></span>
                         </button>
                         <ul className={`absolute top-full left-0 transform -translate-x-1/2 mt-2 bg-lightGray dark:bg-darkBackground text-secondary dark:text-darkText w-48 ${isMenuOpen ? 'opacity-100' : 'hidden'} border border-highlight rounded-md shadow-md transition-opacity duration-200 ease-in`}>
-                            <li className='font-semibold p-2 hover:bg-highlight hover:text-secondary cursor-pointer transition-all duration-200 ease-in'>
+                            <li className='font-semibold p-2 hover:bg-highlight hover:text-secondary cursor-pointer transition-all duration-200 ease-in' onClick={() => scrollToSection('expEdu')}>
                                 Experience
                             </li>
-                            <li className='font-semibold p-2 hover:bg-highlight hover:text-secondary cursor-pointer transition-all duration-200 ease-in'>
+                            <li className='font-semibold p-2 hover:bg-highlight hover:text-secondary cursor-pointer transition-all duration-200 ease-in' onClick={() => scrollToSection('edu')}>
                                 Education
                             </li>
                         </ul>
                     </li>
-                    <li className='font-semibold cursor-pointer relative hover:text-highlight transition-all duration-200 ease-in group'>
+                    <li className='font-semibold cursor-pointer relative hover:text-highlight transition-all duration-200 ease-in group' onClick={() => scrollToSection('skills')}>
                         SKILLS
                         <span className="absolute left-1/2 bottom-0 h-[2px] w-0 bg-highlight transition-all duration-300 ease-in-out group-hover:w-full group-hover:left-0"></span>
                     </li>
-                    <li className='font-semibold cursor-pointer relative hover:text-highlight transition-all duration-200 ease-in group'>
+                    <li className='font-semibold cursor-pointer relative hover:text-highlight transition-all duration-200 ease-in group' onClick={() => scrollToSection('portfolio')}>
                         PROJECTS
                         <span className="absolute left-1/2 bottom-0 h-[2px] w-0 bg-highlight transition-all duration-300 ease-in-out group-hover:w-full group-hover:left-0"></span>
                     </li>
-                    <li className='font-semibold cursor-pointer relative hover:text-highlight transition-all duration-200 ease-in group'>
+                    <li className='font-semibold cursor-pointer relative hover:text-highlight transition-all duration-200 ease-in group' onClick={() => scrollToSection('testimonials')}>
                         TESTIMONIALS
                         <span className="absolute left-1/2 bottom-0 h-[2px] w-0 bg-highlight transition-all duration-300 ease-in-out group-hover:w-full group-hover:left-0"></span>
                     </li>
-                    <li className='font-semibold cursor-pointer relative hover:text-highlight transition-all duration-200 ease-in group'>
+                    <li className='font-semibold cursor-pointer relative hover:text-highlight transition-all duration-200 ease-in group' onClick={() => scrollToSection('contact')}>
                         CONTACT
                         <span className="absolute left-1/2 bottom-0 h-[2px] w-0 bg-highlight transition-all duration-300 ease-in-out group-hover:w-full group-hover:left-0"></span>
                     </li>
@@ -92,18 +100,20 @@ const NavBar: FC = () => {
                     </button>
                 </div>
 
-                <button className="md:hidden" onClick={menuToggle}>
+                <button className="md:hidden">
                     {isOpen ? <HiX size={24} /> : <HiMenu size={24} />}
                 </button>
 
                 <div className={`fixed bottom-0 top-0 right-0 bg-secondary dark:bg-darkBackground p-6 transition-transform ${isOpen ? 'translate-x-0' : 'translate-x-full'} duration-300 ease-in-out`} style={{ width: '55%' }}>
                     <ul className='flex flex-col font-poppins font-semibold text-xl gap-7 text-secondary dark:text-darkText'>
-                        <li className='py-2 cursor-pointer hover:text-highlight transition-all duration-200 ease-in' onClick={menuToggle}>HOME</li>
-                        <li className='py-2 cursor-pointer hover:text-highlight transition-all duration-200 ease-in' onClick={menuToggle}>ABOUT</li>
-                        <li className='py-2 cursor-pointer hover:text-highlight transition-all duration-200 ease-in' onClick={menuToggle}>SKILLS</li>
-                        <li className='py-2 cursor-pointer hover:text-highlight transition-all duration-200 ease-in' onClick={menuToggle}>PROJECTS</li>
-                        <li className='py-2 cursor-pointer hover:text-highlight transition-all duration-200 ease-in' onClick={menuToggle}>TESTIMONIALS</li>
-                        <li className='py-2 cursor-pointer hover:text-highlight transition-all duration-200 ease-in' onClick={menuToggle}>CONTACT</li>
+                        <li className='py-2 cursor-pointer hover:text-highlight transition-all duration-200 ease-in' onClick={() => scrollToSection('home')}>HOME</li>
+                        <li className='py-2 cursor-pointer hover:text-highlight transition-all duration-200 ease-in' onClick={() => scrollToSection('about')}>ABOUT</li>
+                        <li className='py-2 cursor-pointer hover:text-highlight transition-all duration-200 ease-in' onClick={() => scrollToSection('expEdu')}>EXPERIENCE</li>
+                        <li className='py-2 cursor-pointer hover:text-highlight transition-all duration-200 ease-in' onClick={() => scrollToSection('expEdu')}>EDUCATION</li>
+                        <li className='py-2 cursor-pointer hover:text-highlight transition-all duration-200 ease-in' onClick={() => scrollToSection('skills')}>SKILLS</li>
+                        <li className='py-2 cursor-pointer hover:text-highlight transition-all duration-200 ease-in' onClick={() => scrollToSection('portfolio')}>PROJECTS</li>
+                        <li className='py-2 cursor-pointer hover:text-highlight transition-all duration-200 ease-in' onClick={() => scrollToSection('testimonials')}>TESTIMONIALS</li>
+                        <li className='py-2 cursor-pointer hover:text-highlight transition-all duration-200 ease-in' onClick={() => scrollToSection('contact')}>CONTACT</li>
                     </ul>
                 </div>
             </nav>

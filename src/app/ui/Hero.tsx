@@ -12,7 +12,10 @@ const Hero: React.FC = () => {
     const { theme } = useTheme();
 
     return (
-        <div className={`p-6 flex flex-col md:flex-row h-[600px] justify-between items-center ${theme === 'light' ? 'bg-lightGray' : 'bg-darkBackground'}`}>
+        <div
+            className={`p-6 flex flex-col md:flex-row h-[600px] justify-between items-center ${theme === 'light' ? 'bg-lightGray' : 'bg-darkBackground'}`}
+            id='home'
+        >
             <article className={`gap-2 flex flex-col justify-center w-full md:w-1/2 ${theme === 'light' ? 'text-secondary' : 'text-darkText'}`}>
                 <span className='text-base font-poppins font-light'>WELCOME TO MY WORLD!</span>
                 <h1 className='text-6xl font-poppins font-bold'>I'M SHAWAIZ KHAN</h1>
