@@ -37,8 +37,8 @@ const Hero: React.FC = () => {
                     />
                 </div>
             </article>
-            <div className="flex justify-center items-center h-3/4 w-fit md:w-1/2">
-                <Lottie animationData={animationData} loop={true} style={{ width: '100%', height: '100%' }} />
+            <div className="flex justify-end items-center h-full w-full md:w-1/2">
+                <Lottie animationData={animationData} loop={true} className="w-full h-full max-w-lg" />
             </div>
         </div>
     );

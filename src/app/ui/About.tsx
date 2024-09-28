@@ -31,17 +31,17 @@ const About: FC = () => {
     ];
 
     return (
-        <main className={`h-[600px] flex p-6 justify-between items-center gap-5 ${theme === 'light' ? 'bg-lightGray' : 'bg-darkBackground'}`}>
-            <div className='flex justify-center items-center h-full w-1/2'>
-                <Lottie animationData={animationData} loop={true} style={{ width: '100%', height: '100%' }} />
+        <main className={`h-[600px] flex flex-col md:flex-row p-6 justify-between items-center w-full gap-14 ${theme === 'light' ? 'bg-lightGray' : 'bg-darkBackground'}`}>
+            <div className="flex justify-center items-center h-full w-full md:w-1/2">
+                <Lottie animationData={animationData} loop={true} className="w-full h-full max-w-lg" />
             </div>
-            <article className={`flex flex-col gap-6 w-1/2 ${theme === 'light' ? 'text-secondary' : 'text-darkText'}`}>
-                <article className='w-full'>
+            <article className={`flex flex-col gap-6 w-full md:w-1/2 ${theme === 'light' ? 'text-secondary' : 'text-darkText'}`}>
+                <div className='w-full'>
                     <h1 className='font-poppins font-bold text-5xl'>ABOUT ME</h1>
                     <p className='font-inter font-normal text-lg'>
                         Building easy-to-use websites and apps from your ideas. I focus on making everything clear and simple for users.
                     </p>
-                </article>
+                </div>
                 <div className='flex gap-4 text-base'>
                     <div className='font-inter font-bold flex flex-col gap-2'>
                         {headings.map((heading, index) => (
