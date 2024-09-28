@@ -140,6 +140,12 @@ body {
   font-family: 'Inter', 'Poppins', 'Fira Code', Arial, Helvetica, sans-serif;
 }
 
+body.dark {
+  color: var(--foreground);
+  background: #1A202C;
+  font-family: 'Inter', 'Poppins', 'Fira Code', Arial, Helvetica, sans-serif;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;

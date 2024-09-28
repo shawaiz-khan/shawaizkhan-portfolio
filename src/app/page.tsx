@@ -1,3 +1,5 @@
+'use client'
+
 import * as React from 'react';
 import Hero from './ui/Hero';
 import DetailBar from './components/DetailBar';
@@ -7,9 +9,16 @@ import Skills from './ui/Skills';
 import Portfolio from './ui/Portfolio';
 import Testimonials from './ui/Testimonials';
 import Contact from './ui/Contact';
+import { useTheme } from './components/ThemeContext';
 
 export default function Home() {
-  return (
+  const { theme } = useTheme();
+
+  React.useEffect(() => {
+    document.body.classList.toggle('dark', theme === 'dark');
+  }, [theme]);
+
+  return ( 
     <>
       <Hero />
       <DetailBar />
