@@ -48,7 +48,7 @@ const PortfolioCard: React.FC<PortfolioCardProps> = ({ title, description, categ
                 <p className='text-sm'>{shortDescription}</p>
             </div>
             <div className='flex justify-between mt-4 z-10'>
-                { [handleReadMore, () => window.open(github, '_blank', 'noopener,noreferrer'), () => window.open(demo, '_blank', 'noopener,noreferrer')].map((onClick, index) => (
+                {[handleReadMore, () => window.open(github, '_blank', 'noopener,noreferrer'), () => window.open(demo, '_blank', 'noopener,noreferrer')].map((onClick, index) => (
                     <button
                         key={index}
                         className={`text-sm font-inter px-4 py-3 rounded hover:bg-highlight hover:text-lightGray transition duration-150 ease-in hover:-translate-y-2 ${theme === 'dark' ? 'text-lightGray bg-secondary' : 'text-darkBackground bg-lightBackground'}`}

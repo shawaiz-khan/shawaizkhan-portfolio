@@ -11,6 +11,7 @@ import { useState, useEffect } from "react";
 import MobileWarning from "./components/MobileWarning";
 import { metadata } from './metadata';
 import { ThemeProvider } from './components/ThemeContext';
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -54,6 +55,7 @@ export default function RootLayout({
           <ThemeProvider>
             <NavBar />
             {children}
+            <SpeedInsights />
             <Footer />
             <GoToTop />
           </ThemeProvider>
