@@ -3,6 +3,7 @@ import React, { FC, useState, useEffect } from 'react';
 import { HiMenu, HiX } from 'react-icons/hi';
 import ThemeToggle from './ThemeToggle';
 import { useTheme } from '../components/ThemeContext';
+import { ul, li, span, button } from 'framer-motion/client';
 
 const NavBar: FC = () => {
     const { theme } = useTheme();
@@ -24,7 +25,7 @@ const NavBar: FC = () => {
     const handleMouseLeave = () => {
         setTimeout(() => {
             setIsMenuOpen(false);
-        }, 3000);
+        }, 2000);
     };
 
     useEffect(() => {
@@ -36,26 +37,28 @@ const NavBar: FC = () => {
 
     return (
         <header className={`sticky ${isSticky ? 'top-4' : ''} z-20`}>
-            <nav className={`bg-secondary dark:bg-darkBackground h-20 flex justify-between items-center px-6 ${isSticky ? 'rounded-full mx-4' : ''} transition-all duration-300 shadow-lg`}>
-                <div className="cursor-pointer flex items-center gap-1 font-semibold text-3xl text-primary dark:text-darkText">
+            <nav className={`bg-lightGray text-secondary dark:bg-darkBackground h-20 flex justify-between items-center px-6 ${isSticky ? 'rounded-full mx-4' : ''} transition-all duration-300 shadow-lg`}>
+                <div className="cursor-pointer flex items-center gap-1 font-semibold text-3xl text-secondary dark:text-darkText">
                     <span className='text-highlight font-fira'>&lt;</span>
                     <h1 className="font-fira">SK</h1>
                     <span className='text-highlight font-fira'>/&gt;</span>
                 </div>
 
-                <ul className='font-poppins hidden text-xl gap-7 text-primary dark:text-darkText md:flex'>
-                    <li className='font-semibold cursor-pointer relative hover:text-highlight transition-all duration-200 ease-in'>
+                <ul className='font-poppins hidden text-xl gap-7 text-secondary dark:text-darkText md:flex'>
+                    <li className='font-semibold cursor-pointer relative hover:text-highlight transition-all duration-200 ease-in group'>
                         HOME
+                        <span className="absolute left-1/2 bottom-0 h-[2px] w-0 bg-highlight transition-all duration-300 ease-in-out group-hover:w-full group-hover:left-0"></span>
                     </li>
                     <li className="relative group">
                         <button
-                            className='font-semibold relative z-10 text-primary dark:text-darkText hover:text-highlight transition-all duration-200 ease-in'
+                            className='font-semibold relative group z-10 text-secondary dark:text-darkText hover:text-highlight transition-all duration-200 ease-in'
                             onMouseEnter={handleMouseEnter}
                             onMouseLeave={handleMouseLeave}
                         >
                             ABOUT
+                            <span className="absolute left-1/2 bottom-0 h-[2px] w-0 bg-highlight transition-all duration-300 ease-in-out group-hover:w-full group-hover:left-0"></span>
                         </button>
-                        <ul className={`absolute top-full left-0 transform -translate-x-1/2 mt-2 bg-secondary dark:bg-darkBackground text-primary dark:text-darkText w-48 ${isMenuOpen ? 'opacity-100' : 'opacity-0'} border border-highlight rounded-md shadow-md transition-opacity duration-200 ease-in`}>
+                        <ul className={`absolute top-full left-0 transform -translate-x-1/2 mt-2 bg-lightGray dark:bg-darkBackground text-secondary dark:text-darkText w-48 ${isMenuOpen ? 'opacity-100' : 'hidden'} border border-highlight rounded-md shadow-md transition-opacity duration-200 ease-in`}>
                             <li className='font-semibold p-2 hover:bg-highlight hover:text-secondary cursor-pointer transition-all duration-200 ease-in'>
                                 Experience
                             </li>
@@ -64,24 +67,27 @@ const NavBar: FC = () => {
                             </li>
                         </ul>
                     </li>
-                    <li className='font-semibold cursor-pointer relative hover:text-highlight transition-all duration-200 ease-in'>
+                    <li className='font-semibold cursor-pointer relative hover:text-highlight transition-all duration-200 ease-in group'>
                         SKILLS
+                        <span className="absolute left-1/2 bottom-0 h-[2px] w-0 bg-highlight transition-all duration-300 ease-in-out group-hover:w-full group-hover:left-0"></span>
                     </li>
-                    <li className='font-semibold cursor-pointer relative hover:text-highlight transition-all duration-200 ease-in'>
+                    <li className='font-semibold cursor-pointer relative hover:text-highlight transition-all duration-200 ease-in group'>
                         PROJECTS
+                        <span className="absolute left-1/2 bottom-0 h-[2px] w-0 bg-highlight transition-all duration-300 ease-in-out group-hover:w-full group-hover:left-0"></span>
                     </li>
-                    <li className='font-semibold cursor-pointer relative hover:text-highlight transition-all duration-200 ease-in'>
+                    <li className='font-semibold cursor-pointer relative hover:text-highlight transition-all duration-200 ease-in group'>
                         TESTIMONIALS
+                        <span className="absolute left-1/2 bottom-0 h-[2px] w-0 bg-highlight transition-all duration-300 ease-in-out group-hover:w-full group-hover:left-0"></span>
                     </li>
-                    <li className='font-semibold cursor-pointer relative hover:text-highlight transition-all duration-200 ease-in'>
+                    <li className='font-semibold cursor-pointer relative hover:text-highlight transition-all duration-200 ease-in group'>
                         CONTACT
+                        <span className="absolute left-1/2 bottom-0 h-[2px] w-0 bg-highlight transition-all duration-300 ease-in-out group-hover:w-full group-hover:left-0"></span>
                     </li>
                 </ul>
 
-                <div className='flex gap-2'>
+                <div className='flex gap-3'>
                     <ThemeToggle />
-
-                    <button className='bg-highlight hover:text-highlight w-48 h-9 rounded-full text-primary dark:text-darkText font-poppins font-semibold hover:bg-primary transition-colors duration-200 ease-in text-lg hidden md:flex md:justify-center md:items-center'>
+                    <button className='bg-highlight hover:text-highlight w-48 h-9 rounded-md text-lightGray font-poppins font-semibold hover:bg-secondary transition-colors duration-200 ease-in text-lg hidden md:flex md:justify-center md:items-center'>
                         BOOK A MEETING
                     </button>
                 </div>
@@ -91,7 +97,7 @@ const NavBar: FC = () => {
                 </button>
 
                 <div className={`fixed bottom-0 top-0 right-0 bg-secondary dark:bg-darkBackground p-6 transition-transform ${isOpen ? 'translate-x-0' : 'translate-x-full'} duration-300 ease-in-out`} style={{ width: '55%' }}>
-                    <ul className='flex flex-col font-poppins font-semibold text-xl gap-7 text-primary dark:text-darkText'>
+                    <ul className='flex flex-col font-poppins font-semibold text-xl gap-7 text-secondary dark:text-darkText'>
                         <li className='py-2 cursor-pointer hover:text-highlight transition-all duration-200 ease-in' onClick={menuToggle}>HOME</li>
                         <li className='py-2 cursor-pointer hover:text-highlight transition-all duration-200 ease-in' onClick={menuToggle}>ABOUT</li>
                         <li className='py-2 cursor-pointer hover:text-highlight transition-all duration-200 ease-in' onClick={menuToggle}>SKILLS</li>

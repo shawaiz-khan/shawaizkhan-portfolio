@@ -9,7 +9,7 @@ const ThemeToggle: React.FC = () => {
         <button
             onClick={toggleTheme}
             aria-label="Toggle theme"
-            className={`h-9 w-9 rounded-full transition-colors duration-200 ease-in ${theme === 'light' ? 'bg-gray-200 text-black' : 'bg-gray-800 text-white'} flex items-center justify-center`}
+            className={`h-9 w-9 rounded-full transition-colors duration-200 ease-in ${theme === 'light' ? 'bg-primary text-secondary' : 'bg-gray-800 text-white'} flex items-center justify-center shadow-md`}
         >
             {theme === 'light' ? <HiMoon size={24} /> : <HiSun size={24} />}
         </button>
