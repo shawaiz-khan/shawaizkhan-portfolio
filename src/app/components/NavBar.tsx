@@ -3,6 +3,7 @@ import React, { FC, useState, useEffect } from 'react';
 import { HiMenu, HiX } from 'react-icons/hi';
 import ThemeToggle from './ThemeToggle';
 import { useTheme } from '../components/ThemeContext';
+import { button } from 'framer-motion/client';
 
 const NavBar: FC = () => {
     const { theme } = useTheme();
@@ -32,7 +33,7 @@ const NavBar: FC = () => {
         if (section) {
             section.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
-        setIsOpen(false); // Close mobile menu after click
+        setIsOpen(false);
     };
 
     useEffect(() => {
@@ -95,7 +96,7 @@ const NavBar: FC = () => {
 
                 <div className='flex gap-3'>
                     <ThemeToggle />
-                    <button className='bg-highlight hover:text-highlight w-48 h-9 rounded-md text-lightGray font-poppins font-semibold hover:bg-secondary transition-colors duration-200 ease-in text-lg hidden md:flex md:justify-center md:items-center'>
+                    <button className={`w-48 h-9 rounded-md text-lightGray font-poppins font-semibold shadow-md transition-colors duration-200 ease-in text-lg hidden md:flex md:justify-center md:items-center ${theme === 'dark' ? 'bg-highlight hover:bg-secondary hover:text-lightGray' : 'bg-highlight hover:bg-primary hover:text-highlight'}`}>
                         BOOK A MEETING
                     </button>
                 </div>
