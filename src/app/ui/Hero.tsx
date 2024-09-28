@@ -27,12 +27,12 @@ const Hero: React.FC = () => {
                 <div className="btn-container flex gap-5 mt-2">
                     <Button
                         text='RESUME'
-                        color={`bg-secondary text-primary border-secondary ${theme === 'dark' ? 'hover:bg-highlight hover:text-darkBackground' : ''}`}
+                        color={`bg-primary text-secondary shadow-md ${theme === 'dark' ? 'hover:bg-highlight hover:text-darkBackground border-secondary bg-secondary text-lightGray' : 'border-primary'}`}
                         hover='hover:bg-highlight hover:text-primary hover:border-highlight'
                     />
                     <Button
                         text='CONTACT'
-                        color={`bg-secondary text-primary border-secondary ${theme === 'dark' ? 'hover:bg-highlight hover:text-darkBackground' : ''}`}
+                        color={`bg-primary text-secondary shadow-md ${theme === 'dark' ? 'hover:bg-highlight hover:text-darkBackground border-secondary bg-secondary text-lightGray' : 'border-primary'}`}
                         hover='hover:bg-highlight hover:text-primary hover:border-highlight'
                     />
                 </div>

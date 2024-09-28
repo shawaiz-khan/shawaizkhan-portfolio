@@ -1,6 +1,4 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 'use client';
-
 import React, { useState } from 'react';
 import PortfolioCard from '../components/PortfolioCard';
 import ProjectPopup from '../components/ProjectPopup';
@@ -9,6 +7,7 @@ import { StaticImageData } from 'next/image';
 import Pagination from '@mui/material/Pagination';
 import { Autocomplete, TextField } from '@mui/material';
 import { styled } from '@mui/material/styles';
+import { useTheme } from '../components/ThemeContext';
 
 interface Project {
     title: string;
@@ -20,13 +19,21 @@ interface Project {
 }
 
 const CustomPagination = styled(Pagination)(({ theme }) => ({
+    '& .MuiPaginationItem-root': {
+        color: "#9A4DFF",
+    },
     '& .MuiPaginationItem-root.Mui-selected': {
-        backgroundColor: '#9A4DFF',
-        color: '#f0f4f8',
+        backgroundColor: "#9A4DFF",
+        color: '#F0F4F8',
+    },
+    '& .MuiPaginationItem-root:hover': {
+        backgroundColor: theme.palette.action.hover,
+        color: "#F0F4F8",
     },
 }));
 
 const Portfolio: React.FC = () => {
+    const { theme } = useTheme();
     const [isPopup, setIsPopup] = useState<boolean>(false);
     const [selectedProject, setSelectedProject] = useState<Project | null>(null);
     const [currentPage, setCurrentPage] = useState<number>(1);
@@ -59,13 +66,47 @@ const Portfolio: React.FC = () => {
     const uniqueCategories = Array.from(new Set(projects.map(project => project.category)));
 
     return (
-        <main className='p-10 bg-lightGray flex flex-col justify-center items-center'>
-            <h1 className='font-poppins font-bold text-5xl text-secondary text-center mb-8'>PROJECTS</h1>
+        <main className={`p-10 ${theme === 'dark' ? 'bg-darkBackground' : 'bg-lightGray'} flex flex-col justify-center items-center`}>
+            <h1 className={`font-poppins font-bold text-5xl ${theme === "dark" ? 'text-darkText' : 'text-secondary'} text-center mb-8`}>PROJECTS</h1>
             <div className="flex justify-between mb-4 w-4/5">
                 <Autocomplete
                     options={uniqueCategories}
                     getOptionLabel={(option) => option}
-                    renderInput={(params) => <TextField {...params} label="Filter by Category" variant="outlined" />}
+                    renderInput={(params) => (
+                        <TextField
+                            {...params}
+                            label="Filter by Category"
+                            variant="outlined"
+                            InputProps={{
+                                ...params.InputProps,
+                                style: {
+                                    color: theme === 'dark' ? '#F0F4F8' : '#1E2A38', // Set text color
+                                },
+                            }}
+                            InputLabelProps={{
+                                className: theme === 'dark' ? 'text-white' : 'text-secondary',
+                            }}
+                            sx={{
+                                '& .MuiOutlinedInput-root': {
+                                    '& fieldset': {
+                                        borderColor: theme === 'dark' ? '#F0F4F8' : '#1E2A38',
+                                    },
+                                    '&:hover fieldset': {
+                                        borderColor: theme === 'dark' ? '#F0F4F8' : '#1E2A38',
+                                    },
+                                    '&.Mui-focused fieldset': {
+                                        borderColor: '#9A4DFF',
+                                    },
+                                    '& .MuiAutocomplete-clearIndicator': {
+                                        color: theme === 'dark' ? '#F0F4F8' : '#9A4DFF',
+                                    },
+                                    '& .MuiAutocomplete-popupIndicator': {
+                                        color: theme === 'dark' ? '#F0F4F8' : '#9A4DFF',
+                                    },
+                                },
+                            }}
+                        />
+                    )}
                     onChange={(event, value) => {
                         setSelectedCategory(value);
                         setCurrentPage(1);
@@ -75,7 +116,41 @@ const Portfolio: React.FC = () => {
                 <Autocomplete
                     options={projects}
                     getOptionLabel={(option) => option.title}
-                    renderInput={(params) => <TextField {...params} label="Search by Title" variant="outlined" />}
+                    renderInput={(params) => (
+                        <TextField
+                            {...params}
+                            label="Search by Title"
+                            variant="outlined"
+                            InputProps={{
+                                ...params.InputProps,
+                                style: {
+                                    color: theme === 'dark' ? '#F0F4F8' : '#1E2A38', // Set text color
+                                },
+                            }}
+                            InputLabelProps={{
+                                className: theme === 'dark' ? 'text-white' : 'text-black',
+                            }}
+                            sx={{
+                                '& .MuiOutlinedInput-root': {
+                                    '& fieldset': {
+                                        borderColor: theme === 'dark' ? '#F0F4F8' : '#1E2A38',
+                                    },
+                                    '&:hover fieldset': {
+                                        borderColor: theme === 'dark' ? '#F0F4F8' : '#1E2A38',
+                                    },
+                                    '&.Mui-focused fieldset': {
+                                        borderColor: '#9A4DFF',
+                                    },
+                                    '& .MuiAutocomplete-clearIndicator': {
+                                        color: theme === 'dark' ? '#F0F4F8' : '#9A4DFF',
+                                    },
+                                    '& .MuiAutocomplete-popupIndicator': {
+                                        color: theme === 'dark' ? '#F0F4F8' : '#9A4DFF',
+                                    },
+                                },
+                            }}
+                        />
+                    )}
                     filterOptions={(options, { inputValue }) => {
                         return options.filter((option) =>
                             option.title.toLowerCase().includes(inputValue.toLowerCase())
@@ -105,15 +180,7 @@ const Portfolio: React.FC = () => {
             {isPopup && (
                 <ProjectPopup project={selectedProject} onClose={handlePopupClose} />
             )}
-            <div
-                style={{
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    height: '70px',
-                    marginTop: '10px',
-                }}
-            >
+            <div className="flex justify-center items-center h-16 mt-4">
                 <CustomPagination
                     count={totalPages}
                     page={currentPage}
