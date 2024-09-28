@@ -15,6 +15,7 @@ const config: Config = {
         highlight: "#9A4DFF",
         darkBackground: "#1A202C",
         darkText: "#FFFFFF",
+        lightBackground: "#D1D8E0",
       },
       fontFamily: {
         inter: ['Inter', 'sans-serif'],

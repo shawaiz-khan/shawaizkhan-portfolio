@@ -163,7 +163,7 @@ const Portfolio: React.FC = () => {
                     style={{ width: '48%' }}
                 />
             </div>
-            <div className='flex flex-wrap gap-5 justify-center'>
+            <div className='flex flex-wrap gap-5 justify-center my-5'>
                 {currentProjects.map((project: Project, index: number) => (
                     <PortfolioCard
                         key={index}
