@@ -1,13 +1,16 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @typescript-eslint/no-unused-vars */
-'use client';
+/* eslint-disable react-hooks/exhaustive-deps */
+'use client'
+
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { Transition } from '@headlessui/react';
-import testimonials from '../assets/data/Testimonials'; // Ensure this path is correct
+import testimonials from '../assets/data/Testimonials';
+import { useTheme } from '../components/ThemeContext';
 
 export default function FancyTestimonialsSlider(): JSX.Element {
+    const { theme } = useTheme();
     const [active, setActive] = useState<number>(0);
     const [autorotate, setAutorotate] = useState<boolean>(true);
     const autorotateTiming: number = 7000;
@@ -25,8 +28,8 @@ export default function FancyTestimonialsSlider(): JSX.Element {
     }, [autorotate, autorotateTiming, testimonials.length]);
 
     return (
-        <main className="container w-full h-[600px] bg-secondary flex flex-col justify-center items-center">
-            <h1 className='font-poppins font-bold text-5xl text-primary text-center mb-10'>TESTIMONIALS</h1>
+        <main className={`container w-full h-[600px] ${theme === 'dark' ? 'bg-darkBackground text-lightGray' : 'bg-lightGray text-secondary'} flex flex-col justify-center items-center`}>
+            <h1 className={`font-poppins font-bold text-5xl ${theme === 'dark' ? 'text-lightGray' : 'text-secondary'} text-center mb-10`}>TESTIMONIALS</h1>
             <div className="w-full max-w-3xl mx-auto text-center flex flex-col justify-center items-center">
                 <div className="relative h-32">
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[480px] h-[480px] pointer-events-none before:absolute before:inset-0 before:bg-gradient-to-b before:from-highlight/25 before:via-highlight/5 before:via-25% before:to-highlight/0 before:to-75% before:rounded-full before:-z-10">
@@ -64,7 +67,7 @@ export default function FancyTestimonialsSlider(): JSX.Element {
                                 leaveFrom="opacity-100 translate-x-0"
                                 leaveTo="opacity-0 translate-x-4"
                             >
-                                <div className="text-2xl font-bold text-primary before:content-['\201C'] after:content-['\201D']">
+                                <div className={`text-2xl font-bold ${theme === 'dark' ? 'text-lightGray' : 'text-secondary'} before:content-['\u201C'] after:content-['\u201D']`}>
                                     {testimonial.quote}
                                 </div>
                             </Transition>
@@ -75,13 +78,12 @@ export default function FancyTestimonialsSlider(): JSX.Element {
                     {testimonials.map((testimonial, index) => (
                         <button
                             key={index}
-                            className={`inline-flex justify-center whitespace-nowrap rounded-full px-3 py-1.5 m-1.5 text-xs shadow-sm focus-visible:outline-none focus-visible:ring focus-visible:ring-highlight/50 dark:focus-visible:ring-secondary transition-colors duration-150 ${active === index ? 'bg-highlight text-primary shadow-highlight/10' : 'bg-white hover:bg-primary text-secondary'}`}
+                            className={`inline-flex justify-center whitespace-nowrap rounded-full px-3 py-1.5 m-1.5 text-xs shadow-sm focus-visible:outline-none focus-visible:ring focus-visible:ring-highlight/50 transition-colors duration-150 ${active === index ? 'bg-highlight text-primary shadow-highlight/10' : `${theme === 'dark' ? 'bg-secondary text-lightGray' : 'bg-lightBackground text-secondary hover:bg-primary'}`}`}
                             onClick={() => setActive(index)}
                             aria-pressed={active === index}
                         >
                             <span>{testimonial.name}</span>
                             <span className={`${active === index ? 'text-primary' : 'text-secondary'}`}></span>
-                            {/* <span>- {testimonial.role}</span> */}
                         </button>
                     ))}
                 </div>

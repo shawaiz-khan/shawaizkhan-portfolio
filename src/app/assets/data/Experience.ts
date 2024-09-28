@@ -1,6 +1,6 @@
 export const EXPERIENCE: IExperience[] = [
     {
-        role: "Freelance Web Developer",
+        role: "Freelance Web Dev.",
         company: "Local Businesses",
         startDate: "Feb 2022",
         endDate: "Present",
@@ -12,7 +12,7 @@ export const EXPERIENCE: IExperience[] = [
         ],
     },
     {
-        role: "Frontend Web Developer Intern",
+        role: "Frontend Web Dev. Intern",
         company: "MAZIV Technologies",
         startDate: "Jun 2024",
         endDate: "Sep 2024",

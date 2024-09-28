@@ -27,12 +27,12 @@ const EducationItem: React.FC<{ item: IEducation; index: number }> = ({ item, in
                     </div>
 
                     <div className="w-full sm:w-2/5 md:px-2 sm:py-10">
-                        <div className={`flex flex-col w-full rounded-lg shadow border-[3px] ${theme === 'dark' ? 'border-gray-600' : 'border-secondary'} px-2 sm:px-4 py-5`}>
-                            <div className={`text-secondary mb-2 ${theme === 'dark' ? 'text-gray-200' : 'text-darkText'}`}>
-                                <div className="font-bold text-md">{item.degree}</div>
-                                <div className={`font-medium text-secondary text-sm tracking-wider ${theme === 'dark' ? 'text-gray-300' : 'text-darkText'}`}>{item.institution}</div>
+                        <div className={`flex flex-col w-full rounded-lg shadow-lg border-2 ${theme === 'dark' ? 'border-gray-600' : 'border-secondary'} bg-opacity-80 px-4 py-6`}>
+                            <div className={`mb-2 ${theme === 'dark' ? 'text-lightGray' : 'text-secondary'}`}>
+                                <div className="font-bold text-lg">{item.degree}</div>
+                                <div className={`font-medium text-sm tracking-wide ${theme === 'dark' ? 'text-lightBackground' : 'text-secondary'}`}>{item.institution}</div>
                             </div>
-                            <div className={`text-secondary text-sm leading-6 sm:text-base ${theme === 'dark' ? 'text-gray-200' : 'text-darkText'}`}>{item.details}</div>
+                            <div className={`text-sm leading-6 sm:text-base ${theme === 'dark' ? 'text-lightGray' : 'text-secondary'}`}>{item.details}</div>
                         </div>
                     </div>
 
@@ -73,12 +73,12 @@ const EducationItem: React.FC<{ item: IEducation; index: number }> = ({ item, in
                     </div>
 
                     <div className="w-full sm:w-2/5 md:px-2 sm:py-10">
-                        <div className={`flex flex-col w-full rounded-lg shadow border-[3px] ${theme === 'dark' ? 'border-gray-600' : 'border-secondary'} px-2 sm:px-4 py-5`}>
-                            <div className={`text-secondary mb-2 ${theme === 'dark' ? 'text-gray-200' : 'text-darkText'}`}>
-                                <div className="font-bold text-md">{item.degree}</div>
-                                <div className={`font-medium text-secondary text-sm tracking-wider ${theme === 'dark' ? 'text-gray-300' : 'text-darkText'}`}>{item.institution}</div>
+                        <div className={`flex flex-col w-full rounded-lg shadow-lg border-2 ${theme === 'dark' ? 'border-gray-600' : 'border-secondary'} bg-opacity-80 px-4 py-6`}>
+                            <div className={`mb-2 ${theme === 'dark' ? 'text-lightGray' : 'text-secondary'}`}>
+                                <div className="font-bold text-lg">{item.degree}</div>
+                                <div className={`font-medium text-sm tracking-wide ${theme === 'dark' ? 'text-lightBackground' : 'text-secondary'}`}>{item.institution}</div>
                             </div>
-                            <div className={`text-secondary text-sm leading-6 sm:text-base ${theme === 'dark' ? 'text-gray-200' : 'text-darkText'}`}>{item.details}</div>
+                            <div className={`text-sm leading-6 sm:text-base ${theme === 'dark' ? 'text-lightGray' : 'text-secondary'}`}>{item.details}</div>
                         </div>
                     </div>
                 </>
