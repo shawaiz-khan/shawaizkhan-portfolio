@@ -83,7 +83,7 @@ const Portfolio: React.FC = () => {
                             InputProps={{
                                 ...params.InputProps,
                                 style: {
-                                    color: theme === 'dark' ? '#F0F4F8' : '#1E2A38', // Set text color
+                                    color: theme === 'dark' ? '#F0F4F8' : '#1E2A38',
                                 },
                             }}
                             InputLabelProps={{
@@ -127,7 +127,7 @@ const Portfolio: React.FC = () => {
                             InputProps={{
                                 ...params.InputProps,
                                 style: {
-                                    color: theme === 'dark' ? '#F0F4F8' : '#1E2A38', // Set text color
+                                    color: theme === 'dark' ? '#F0F4F8' : '#1E2A38',
                                 },
                             }}
                             InputLabelProps={{
