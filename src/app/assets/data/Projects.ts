@@ -1,5 +1,6 @@
 import { StaticImageData } from 'next/image';
 import Image from '../images/placeholder.jpg';
+import InfinityShadow from '../images/1.jpg'
 
 export interface IProjects {
     title: string;
@@ -16,7 +17,7 @@ const projects: IProjects[] = [
         description: "A responsive portfolio website showcasing my projects and skills. This site is designed to provide visitors with a comprehensive view of my work, including detailed case studies, technology stacks used, and the design process behind each project. It features smooth navigation, an engaging layout, and a clean aesthetic to highlight my creativity and attention to detail.",
         category: "Web Development",
         image: {
-            src: Image,
+            src: InfinityShadow,
         },
         github: "https://github.com/shawaiz-khan",
         demo: "https://devdigitals.org/",
