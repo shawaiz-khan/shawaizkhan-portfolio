@@ -5,63 +5,48 @@ export interface Testimonial {
     img: StaticImageData;
     quote: string;
     name: string;
-    role: string;
 }
 
 const testimonials: Testimonial[] = [
     {
         img: TestimonialImg01,
-        quote: "The ability to capture responses is a game-changer. If a user gets tired of the sign up and leaves, that data is still persisted. Additionally, it's great to select between formats.",
-        name: 'Jessie J',
-        role: 'Acme LTD',
+        quote: "Efficient communication is their top priority, ensuring you receive revisions that meet your needs. You can expect a seamless experience throughout the process.",
+        name: 'Geenenict',
     },
     {
         img: TestimonialImg01,
-        quote: "Having the power to capture user feedback is revolutionary. Even if a participant abandons the sign-up process midway, their valuable input remains intact.",
-        name: 'Nick V',
-        role: 'Malika Inc.',
+        quote: "Good communication I found exactly what I was looking for. It works very well and has provided me with more examples than I had.",
+        name: 'Mundosupay',
     },
     {
         img: TestimonialImg01,
-        quote: "The functionality to capture responses is a true game-changer. Even if a user becomes fatigued during sign-up and abandons the process, their information remains stored.",
-        name: 'Amelia W',
-        role: 'Panda AI',
+        quote: "Well done thanks",
+        name: 'Mh. Tech',
     },
     {
         img: TestimonialImg01,
-        quote: "The ability to capture responses is a game-changer. If a user gets tired of the sign up and leaves, that data is still persisted. Additionally, it's great to select between formats.",
-        name: 'Jessie J',
-        role: 'Acme LTD',
+        quote: "I'm extremely impressed with how quickly and efficiently they worked, while also being incredibly friendly and easy to communicate with. Thanks for your help, buddy!",
+        name: 'Johnson Tangelo',
     },
     {
         img: TestimonialImg01,
-        quote: "Having the power to capture user feedback is revolutionary. Even if a participant abandons the sign-up process midway, their valuable input remains intact.",
-        name: 'Nick V',
-        role: 'Malika Inc.',
+        quote: "He pretty much went straight to it and made my logo a legendary work! It will be on display in the future and will recommend anyone interested in high quality work!",
+        name: 'Zawyehtike',
     },
     {
         img: TestimonialImg01,
-        quote: "The functionality to capture responses is a true game-changer. Even if a user becomes fatigued during sign-up and abandons the process, their information remains stored.",
-        name: 'Amelia W',
-        role: 'Panda AI',
+        quote: "Great response time, super helpful, and perfect fit for our app icon needs. Highly recommended to anyone looking for professional graphic and web design services.",
+        name: 'Klayden',
     },
     {
         img: TestimonialImg01,
-        quote: "The ability to capture responses is a game-changer. If a user gets tired of the sign up and leaves, that data is still persisted. Additionally, it's great to select between formats.",
-        name: 'Jessie J',
-        role: 'Acme LTD',
+        quote: "Absolut top ein überragender Kooperationspartner kann ich weiterempfehlen 👍",
+        name: 'Dicker0202',
     },
     {
         img: TestimonialImg01,
-        quote: "Having the power to capture user feedback is revolutionary. Even if a participant abandons the sign-up process midway, their valuable input remains intact.",
-        name: 'Nick V',
-        role: 'Malika Inc.',
-    },
-    {
-        img: TestimonialImg01,
-        quote: "The functionality to capture responses is a true game-changer. Even if a user becomes fatigued during sign-up and abandons the process, their information remains stored.",
-        name: 'Amelia W',
-        role: 'Panda AI',
+        quote: "Amazing literally made it in a couple of hours",
+        name: 'Darkhuh',
     },
 ];
 

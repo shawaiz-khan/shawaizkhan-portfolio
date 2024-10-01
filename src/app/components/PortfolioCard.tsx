@@ -43,11 +43,12 @@ const PortfolioCard: React.FC<PortfolioCardProps> = ({ title, description, categ
                         <Image
                             src={image.src}
                             alt={title}
-                            className={`object-cover rounded-md transition-transform duration-300 ${isHover ? 'scale-110' : 'scale-100'}`}
+                            className={`cursor-pointer object-cover rounded-md transition-transform duration-300 ${isHover ? 'scale-110' : 'scale-100'}`}
                             style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                             priority
                             onMouseEnter={() => setIsHover(true)}
                             onMouseLeave={() => setIsHover(false)}
+                            onClick={handleReadMore}
                         />
                     </div>
                 </div>

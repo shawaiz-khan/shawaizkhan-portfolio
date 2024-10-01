@@ -78,7 +78,7 @@ const projects: IProjects[] = [
     {
         title: "Graphic Design Portfolio",
         description: "A showcase of graphic design work, including logos, branding projects, and marketing materials. This portfolio highlights my skills in Adobe Creative Suite and demonstrates my ability to create visually appealing designs that effectively communicate brand messages. It includes case studies that outline the design process and the impact of each project.",
-        category: "Graphic Design",
+        category: "WordPress",
         image: {
             src: HomeInternetPlains,
         },
