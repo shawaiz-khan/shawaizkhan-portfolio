@@ -20,11 +20,6 @@ const testimonials: Testimonial[] = [
     },
     {
         img: TestimonialImg01,
-        quote: "Well done thanks",
-        name: 'Mh. Tech',
-    },
-    {
-        img: TestimonialImg01,
         quote: "I'm extremely impressed with how quickly and efficiently they worked, while also being incredibly friendly and easy to communicate with. Thanks for your help, buddy!",
         name: 'Johnson Tangelo',
     },
@@ -45,7 +40,7 @@ const testimonials: Testimonial[] = [
     },
     {
         img: TestimonialImg01,
-        quote: "Amazing literally made it in a couple of hours",
+        quote: "Amazing literally made it in a couple of hours. I am really happy to work with him. Will consider him again if I get a chance.",
         name: 'Darkhuh',
     },
 ];

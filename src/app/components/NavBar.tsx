@@ -25,7 +25,7 @@ const NavBar: FC = () => {
     const handleMouseLeave = () => {
         setTimeout(() => {
             setIsMenuOpen(false);
-        }, 2000);
+        }, 1000);
     };
 
     const scrollToSection = (sectionId: string) => {

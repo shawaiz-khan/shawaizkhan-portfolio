@@ -66,8 +66,8 @@ const Portfolio: React.FC = () => {
     const uniqueCategories = Array.from(new Set(projects.map(project => project.category)));
 
     return (
-        <main 
-        className={`p-10 ${theme === 'dark' ? 'bg-darkBackground' : 'bg-lightGray'} flex flex-col justify-center items-center`}
+        <main
+            className={`p-10 ${theme === 'dark' ? 'bg-darkBackground' : 'bg-lightGray'} flex flex-col justify-center items-center`}
             id='portfolio'
         >
             <h1 className={`font-poppins font-bold text-5xl ${theme === "dark" ? 'text-darkText' : 'text-secondary'} text-center mb-8`}>PROJECTS</h1>
@@ -80,16 +80,13 @@ const Portfolio: React.FC = () => {
                             {...params}
                             label="Filter by Category"
                             variant="outlined"
-                            InputProps={{
-                                ...params.InputProps,
-                                style: {
+                            sx={{
+                                input: {
                                     color: theme === 'dark' ? '#F0F4F8' : '#1E2A38',
                                 },
-                            }}
-                            InputLabelProps={{
-                                className: theme === 'dark' ? 'text-white' : 'text-secondary',
-                            }}
-                            sx={{
+                                '& .MuiInputLabel-root': {
+                                    color: theme === 'dark' ? '#F0F4F8' : '#1E2A38',
+                                },
                                 '& .MuiOutlinedInput-root': {
                                     '& fieldset': {
                                         borderColor: theme === 'dark' ? '#F0F4F8' : '#1E2A38',
@@ -124,16 +121,13 @@ const Portfolio: React.FC = () => {
                             {...params}
                             label="Search by Title"
                             variant="outlined"
-                            InputProps={{
-                                ...params.InputProps,
-                                style: {
+                            sx={{
+                                input: {
                                     color: theme === 'dark' ? '#F0F4F8' : '#1E2A38',
                                 },
-                            }}
-                            InputLabelProps={{
-                                className: theme === 'dark' ? 'text-white' : 'text-black',
-                            }}
-                            sx={{
+                                '& .MuiInputLabel-root': {
+                                    color: theme === 'dark' ? '#F0F4F8' : '#1E2A38',
+                                },
                                 '& .MuiOutlinedInput-root': {
                                     '& fieldset': {
                                         borderColor: theme === 'dark' ? '#F0F4F8' : '#1E2A38',

@@ -13,7 +13,7 @@ export default function FancyTestimonialsSlider(): JSX.Element {
     const { theme } = useTheme();
     const [active, setActive] = useState<number>(0);
     const [autorotate, setAutorotate] = useState<boolean>(true);
-    const autorotateTiming: number = 3000;
+    const autorotateTiming: number = 5000;
 
     useEffect(() => {
         let timer: NodeJS.Timeout;
