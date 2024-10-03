@@ -6,9 +6,6 @@ import "./globals.css";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import GoToTop from "./components/GoToTop";
-import { useState, useEffect } from "react";
-import MobileWarning from "./components/MobileWarning";
-import { metadata } from './metadata';
 import { ThemeProvider } from './components/ThemeContext';
 import { SpeedInsights } from "@vercel/speed-insights/next"
 
@@ -28,37 +25,27 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
-    handleResize();
-    window.addEventListener('resize', handleResize);
-
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
 
   return (
     <html lang="en">
       <head>
-        <title>{metadata.title}</title>
-        <meta name="description" content={metadata.description} />
+        <title>Shawaiz Khan - Frontend Web Developer</title>
+        <meta name="description" content="I am Shawaiz Khan, a frontend web developer specialized in React, JavaScript, TypeScript, TailwindCSS, Next.js, and Node.js." />
+        <meta name="keywords" content="Shawaiz Khan, Frontend Developer, React, JavaScript, TypeScript, TailwindCSS, Next.js, Node.js, UI/UX Design, Web Development, Graphic Design" />
+        <meta name="author" content="Shawaiz Khan" />
+        <meta property="og:title" content="Shawaiz Khan - Frontend Web Developer" />
+        <meta property="og:description" content="I am Shawaiz Khan, a frontend web developer specialized in React, JavaScript, TypeScript, TailwindCSS, Next.js, and Node.js." />
+        <meta property="og:image" content="URL_TO_YOUR_IMAGE" />
+        <meta property="og:url" content="YOUR_WEBSITE_URL" />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        {isMobile ? (
-          <MobileWarning />
-        ) : (
-          <ThemeProvider>
-            <NavBar />
-            {children}
-            <SpeedInsights />
-            <Footer />
-            <GoToTop />
-          </ThemeProvider>
-        )}
+        <ThemeProvider>
+          <NavBar />
+          {children}
+          <SpeedInsights />
+          <Footer />
+          <GoToTop />
+        </ThemeProvider>
       </body>
     </html>
   );
