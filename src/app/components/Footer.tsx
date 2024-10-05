@@ -52,7 +52,7 @@ const Footer: React.FC = () => {
                 {/* Footer Text */}
                 <div className="text-center text-md md:text-xl font-poppins">
                     &copy; {year}{' '}
-                    <span className={`font-medium cursor-pointer transition-all duration-300 ease-in ${theme === 'dark' ? 'text-highlight hover:text-darkText' : 'text-highlight hover:text-primary'}`}>
+                    <span className={`font-medium cursor-pointer transition-all duration-300 ease-in ${theme === 'dark' ? 'text-highlight hover:text-primary' : 'text-highlight hover:text-secondary'}`}>
                         Shawaiz Khan
                     </span>
                     . All rights reserved.

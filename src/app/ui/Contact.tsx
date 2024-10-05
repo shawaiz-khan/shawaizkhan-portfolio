@@ -80,12 +80,12 @@ const Contact: React.FC = () => {
                             <div className="flex flex-col md:flex-row gap-2">
                                 <Button
                                     text='SUBMIT'
-                                    color={`${theme === 'dark' ? 'bg-gray-700' : 'bg-secondary'} w-full max-h-12 border-transparent`}
+                                    color={`${theme === 'dark' ? 'bg-gray-700 text-primary' : 'bg-primary text-secondary hover:text-primary'} w-full max-h-12 border-transparent shadow-md`}
                                     hover='hover:bg-highlight'
                                 />
                                 <Button
                                     text='BOOK A MEETING'
-                                    color={`${theme === 'dark' ? 'bg-gray-700' : 'bg-secondary'} w-full max-h-12 border-transparent`}
+                                    color={`${theme === 'dark' ? 'bg-gray-700 text-primary' : 'bg-primary text-secondary hover:text-primary'} w-full max-h-12 border-transparent shadow-md`}
                                     hover='hover:bg-highlight'
                                 />
                             </div>
