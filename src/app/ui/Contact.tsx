@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import Button from '../components/Buttons';
 import { AiOutlinePhone, AiOutlineMail } from 'react-icons/ai';
 import { MdOutlineLocationOn } from 'react-icons/md';
@@ -13,8 +13,15 @@ const Contact: React.FC = () => {
     const { theme } = useTheme();
     const formRef = useRef<HTMLFormElement>(null);
 
+    // State to manage loading and alert messages
+    const [loading, setLoading] = useState(false);
+    const [alertMessage, setAlertMessage] = useState('');
+    const [showAlert, setShowAlert] = useState(false);
+
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+        setLoading(true);
+        setAlertMessage('');
 
         emailjs.sendForm(
             'service_f45gqry',
@@ -24,11 +31,16 @@ const Contact: React.FC = () => {
         )
             .then((result) => {
                 console.log(result.text);
-                alert('Message sent successfully!');
+                setAlertMessage('Message sent successfully!');
+                formRef.current?.reset();
             })
             .catch((error) => {
                 console.log(error.text);
-                alert('Failed to send message. Please try again later.');
+                setAlertMessage('Failed to send message. Please try again later.');
+            })
+            .finally(() => {
+                setLoading(false);
+                setShowAlert(true);
             });
     };
 
@@ -53,7 +65,7 @@ const Contact: React.FC = () => {
                                 size={35}
                                 className={`rounded-full p-2 shadow-md ${theme === 'dark' ? 'bg-primary text-highlight' : 'bg-secondary text-highlight'}`}
                             />
-                            <p className={`text-sm font-medium ${theme === 'light' ? 'text-lightGray' : 'text-secondary'}`}>shawaizkhan.biz@gmail.com</p>
+                            <p className={`text-sm font-medium ${theme === 'light' ? 'text-lightGray' : 'text-secondary'}`}>business@shawaizkhan.tech</p>
                         </div>
                         <div className='flex gap-3 items-center'>
                             <AiOutlinePhone
@@ -120,6 +132,20 @@ const Contact: React.FC = () => {
                                 />
                             </div>
                         </form>
+
+                        {/* Alert Modal */}
+                        {showAlert && (
+                            <div className={`fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center bg-black bg-opacity-50`}>
+                                <div className={`bg-white p-4 rounded shadow-lg`}>
+                                    <p className='text-center'>{loading ? 'Sending...' : alertMessage}</p>
+                                    <button
+                                        onClick={() => setShowAlert(false)}
+                                        className='mt-4 bg-blue-500 text-white py-1 px-3 rounded'>
+                                        Close
+                                    </button>
+                                </div>
+                            </div>
+                        )}
                     </div>
                 </article>
             </section>
