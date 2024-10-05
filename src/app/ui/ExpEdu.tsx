@@ -18,14 +18,14 @@ const ExpEdu: FC = () => {
             <div className='flex gap-5'>
                 <Button
                     text='EXPERIENCE'
-                    color={`bg-transparent ${theme === 'light' ? 'text-secondary border-highlight' : 'text-darkText border-highlight'}`}
+                    color={`bg-transparent ${theme === 'light' ? 'text-secondary border-secondary' : 'text-darkText border-secondary'}`}
                     hover={`hover:bg-secondary hover:text-primary ${theme === 'light' ? '' : 'hover:text-darkText'}`}
                     isActive={activeTab === 'experience'}
                     onClick={() => setActiveTab('experience')}
                 />
                 <Button
                     text='EDUCATION'
-                    color={`bg-transparent ${theme === 'light' ? 'text-secondary border-highlight' : 'text-darkText border-highlight'}`}
+                    color={`bg-transparent ${theme === 'light' ? 'text-secondary border-secondary' : 'text-darkText border-secondary'}`}
                     hover={`hover:bg-secondary hover:text-primary ${theme === 'light' ? '' : 'hover:text-darkText'}`}
                     isActive={activeTab === 'education'}
                     onClick={() => setActiveTab('education')}

@@ -13,12 +13,12 @@ const Contact: React.FC = () => {
 
     return (
         <main
-            className={`h-screen p-10 ${theme === 'dark' ? 'bg-darkBackground' : 'bg-primary'}`}
+            className={`min-h-screen p-6 md:p-10 ${theme === 'dark' ? 'bg-darkBackground' : 'bg-primary'}`}
             id='contact'
         >
-            <section className='flex justify-center items-center h-full'>
-                <article className={`h-3/4 w-1/4 rounded-lg flex flex-col justify-between items-start p-6 shadow-lg z-10 ${theme === 'light' ? 'bg-secondary' : 'bg-lightGray'}`}>
-                    <h2 className={`text-2xl font-bold font-poppins mb-4 ${theme === 'light' ? 'text-lightGray' : 'text-secondary'}`}>Contact</h2>
+            <section className='flex flex-col md:flex-row justify-center items-center h-full'>
+                <article className={`h-auto w-full md:w-1/3 lg:w-1/4 rounded-lg flex flex-col justify-between items-start p-6 shadow-lg z-10 ${theme === 'light' ? 'bg-secondary' : 'bg-lightGray'}`}>
+                    <h2 className={`text-xl md:text-2xl font-bold font-poppins mb-4 ${theme === 'light' ? 'text-lightGray' : 'text-secondary'}`}>Contact</h2>
                     <div className="contact-options flex flex-col gap-4 w-full">
                         <div className='flex gap-3 items-center'>
                             <MdOutlineLocationOn
@@ -47,14 +47,15 @@ const Contact: React.FC = () => {
                             src={formLottie}
                             alt='Contact us'
                             width={150}
+                            className="mt-4"
                         />
                     </div>
                 </article>
-                <article className={`h-fit w-2/5 rounded-r-lg p-5 flex flex-col justify-center -ml-5 shadow-lg ${theme === 'dark' ? 'bg-secondary' : 'bg-lightGray'}`}>
-                    <div className='ml-5'>
-                        <h1 className={`text-2xl mb-2 font-poppins font-bold ${theme === 'dark' ? 'text-lightGray' : 'text-secondary'}`}>Get in Touch</h1>
+                <article className={`h-auto w-full md:w-2/3 lg:w-2/5 rounded-lg p-5 flex flex-col justify-center md:-ml-5 shadow-lg ${theme === 'dark' ? 'bg-secondary' : 'bg-lightGray'}`}>
+                    <div className='ml-0 md:ml-5'>
+                        <h1 className={`text-xl md:text-2xl mb-2 font-poppins font-bold ${theme === 'dark' ? 'text-lightGray' : 'text-secondary'}`}>Get in Touch</h1>
                         <form className='flex flex-col gap-4'>
-                            <div className='flex gap-3'>
+                            <div className='flex flex-col md:flex-row gap-3'>
                                 <input
                                     type="text"
                                     placeholder='Name'
@@ -76,7 +77,7 @@ const Contact: React.FC = () => {
                                 className={`p-2 rounded border h-32 resize-none overflow-hidden ${theme === 'dark' ? 'border-gray-600 text-lightGray' : 'border-gray-300 text-secondary'} focus:outline-highlight`}
                             />
 
-                            <div className="flex gap-2">
+                            <div className="flex flex-col md:flex-row gap-2">
                                 <Button
                                     text='SUBMIT'
                                     color={`${theme === 'dark' ? 'bg-gray-700' : 'bg-secondary'} w-full max-h-12 border-transparent`}

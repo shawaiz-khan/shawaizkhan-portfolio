@@ -71,7 +71,7 @@ const Portfolio: React.FC = () => {
             id='portfolio'
         >
             <h1 className={`font-poppins font-bold text-5xl ${theme === "dark" ? 'text-darkText' : 'text-secondary'} text-center mb-8`}>PROJECTS</h1>
-            <div className="flex justify-between mb-4 w-4/5">
+            <div className="flex flex-col sm:flex-row justify-between mb-4 w-full gap-4">
                 <Autocomplete
                     options={uniqueCategories}
                     getOptionLabel={(option) => option}
@@ -105,13 +105,14 @@ const Portfolio: React.FC = () => {
                                     },
                                 },
                             }}
+                            fullWidth
                         />
                     )}
                     onChange={(event, value) => {
                         setSelectedCategory(value);
                         setCurrentPage(1);
                     }}
-                    style={{ width: '48%' }}
+                    style={{ flex: '1 1 auto' }}
                 />
                 <Autocomplete
                     options={projects}
@@ -146,6 +147,7 @@ const Portfolio: React.FC = () => {
                                     },
                                 },
                             }}
+                            fullWidth
                         />
                     )}
                     filterOptions={(options, { inputValue }) => {
@@ -157,7 +159,7 @@ const Portfolio: React.FC = () => {
                         setSelectedTitle(value ? value.title : null);
                         setCurrentPage(1);
                     }}
-                    style={{ width: '48%' }}
+                    style={{ flex: '1 1 auto' }}
                 />
             </div>
             <div className='flex flex-wrap gap-5 justify-center my-5'>

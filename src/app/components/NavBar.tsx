@@ -107,17 +107,17 @@ const NavBar: FC = () => {
                 </div>
 
                 {/* Mobile Menu Icon */}
-                <button className="md:hidden flex justify-center items-center gap-1">
+                <div className="md:hidden flex justify-center items-center gap-1">
                     <ThemeToggle />
                     {!isOpen && <HiMenu size={24} onClick={menuToggle} className='text-secondary dark:text-lightGray' />}
-                </button>
+                </div>
 
                 {/* Mobile Menu */}
-                <div className={`fixed z-50 flex flex-col justify-evenly items-start bottom-0 top-0 w-3/4 right-0 bg-lightGray dark:bg-darkBackground p-6 shadow-[0px_4px_15px_rgba(0,0,0,0.50)] transition-transform ${isOpen ? 'translate-x-0' : 'translate-x-full'} duration-300 ease-in-out`}>
-                    <button className="md:hidden top-8 left-5 fixed" onClick={menuToggle}>
+                <div className={`fixed z-50 flex flex-col justify-start items-start bottom-0 top-0 w-3/4 right-0 bg-lightGray dark:bg-darkBackground p-6 shadow-[0px_4px_15px_rgba(0,0,0,0.50)] transition-transform ${isOpen ? 'translate-x-0' : 'translate-x-full'} duration-300 ease-in-out`}>
+                    <button className="md:hidden top-8 left-5" onClick={menuToggle}>
                         {isOpen && <HiX size={24} className='text-secondary dark:text-lightGray' />}
                     </button>
-                    <ul className='flex flex-col font-poppins font-semibold text-xl gap-7 text-secondary dark:text-darkText'>
+                    <ul className='flex flex-col font-poppins font-semibold text-xl gap-7 mt-10 text-secondary dark:text-darkText'>
                         <li className='cursor-pointer hover:text-highlight transition-all duration-200 ease-in' onClick={() => scrollToSection('home')}>HOME</li>
                         <li className='cursor-pointer hover:text-highlight transition-all duration-200 ease-in' onClick={() => scrollToSection('about')}>ABOUT</li>
                         <li className='cursor-pointer hover:text-highlight transition-all duration-200 ease-in' onClick={() => scrollToSection('expEdu')}>EXPERIENCE</li>

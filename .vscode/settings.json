@@ -1,6 +1,196 @@
 {
+    "code-runner.runInTerminal": true,
+    "security.workspace.trust.untrustedFiles": "open",
+    "explorer.confirmDelete": false,
+    "C_Cpp.intelliSenseEngine": "disabled",
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "editor.defaultFormatter": "jinxdash.prettier-rust",
+    "eslint.format.enable": true,
+    "[cpp]": {
+        "editor.defaultFormatter": "xaver.clang-format",
+        "C_Cpp_Runner.msvcBatchPath": "",
+        "C_Cpp_Runner.cCompilerPath": "gcc",
+        "C_Cpp_Runner.cppCompilerPath": "g++",
+        "C_Cpp_Runner.debuggerPath": "gdb",
+        "C_Cpp_Runner.cStandard": "",
+        "C_Cpp_Runner.cppStandard": "",
+        "C_Cpp_Runner.useMsvc": false,
+        "C_Cpp_Runner.warnings": [
+            "-Wall",
+            "-Wextra",
+            "-Wpedantic",
+            "-Wshadow",
+            "-Wformat=2",
+            "-Wcast-align",
+            "-Wconversion",
+            "-Wsign-conversion",
+            "-Wnull-dereference"
+        ],
+        "C_Cpp_Runner.msvcWarnings": [
+            "/W4",
+            "/permissive-",
+            "/w14242",
+            "/w14287",
+            "/w14296",
+            "/w14311",
+            "/w14826",
+            "/w44062",
+            "/w44242",
+            "/w14905",
+            "/w14906",
+            "/w14263",
+            "/w44265",
+            "/w14928"
+        ],
+        "C_Cpp_Runner.enableWarnings": true,
+        "C_Cpp_Runner.warningsAsError": false,
+        "C_Cpp_Runner.compilerArgs": [],
+        "C_Cpp_Runner.linkerArgs": [],
+        "C_Cpp_Runner.includePaths": [],
+        "C_Cpp_Runner.includeSearch": [
+            "*",
+            "**/*"
+        ],
+        "C_Cpp_Runner.excludeSearch": [
+            "**/build",
+            "**/build/**",
+            "**/.*",
+            "**/.*/**",
+            "**/.vscode",
+            "**/.vscode/**"
+        ],
+        "C_Cpp.default.includePath": [
+            "C:/MySQL/MySQL Connector C++ 8.4/include",
+            "C:/MySQL/MySQL Connector C++ 8.4/include/jdbc",
+            "C:/MySQL/MySQL Connector C++ 8.4/include/mysqlx"
+        ],
+        "C_Cpp_Runner.useAddressSanitizer": false,
+        "C_Cpp_Runner.useUndefinedSanitizer": false,
+        "C_Cpp_Runner.useLeakSanitizer": false,
+        "C_Cpp_Runner.showCompilationTime": false,
+        "C_Cpp_Runner.useLinkTimeOptimization": false,
+        "C_Cpp_Runner.msvcSecureNoWarnings": false
+    },
+    "[css]": {
+        "editor.defaultFormatter": "vscode.css-language-features"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "codestream.serverUrl": "https://codestream-us1.service.newrelic.com",
+    "clangd.path": "c:\\Users\\Shawaiz\\AppData\\Roaming\\Code\\User\\globalStorage\\llvm-vs-code-extensions.vscode-clangd\\install\\17.0.3\\clangd_17.0.3\\bin\\clangd.exe",
+    "pretty-formatter.braceLine": true,
+    "astyle.csharp.enable": true,
+    "astyle.java.enable": true,
+    "astyle.additional_languages": [],
+    "astyle.cmd_options": [],
+    "astyle.astylerc": "",
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "settingsSync.ignoredSettings": [
+        "-C_Cpp.clang_format_path"
+    ],
+    "editor.formatOnType": true,
+    "uncrustify.langOverrides": {
+        "apex": "JAVA",
+        "apex-anon": "JAVA"
+    },
+    "C_Cpp.formatting": "vcFormat",
+    "workbench.iconTheme": "material-icon-theme",
+    "C_Cpp.default.compilerPath": "c:\\mingw\\mingw64\\bin\\addr2line.exe",
+    "clang-format.executable": "C:\\Program Files\\LLVM\\bin\\clang-format.exe",
+    "gitlens.ai.experimental.provider": "openai",
+    "gitlens.ai.experimental.openai.model": "gpt-4-1106-preview",
+    "git.autofetch": true,
+    "workbench.colorTheme": "Material Theme Ocean High Contrast",
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "vscode-edge-devtools.webhintInstallNotification": true,
+    "editor.cursorStyle": "block",
+    "editor.cursorBlinking": "smooth",
+    "editor.cursorSmoothCaretAnimation": "on",
+    "editor.snippetSuggestions": "top",
+    "editor.tabCompletion": "on",
+    "editor.renderWhitespace": "all",
+    "liveServer.settings.donotVerifyTags": true,
+    "workbench.editorAssociations": {
+        "*.json": "default"
+    },
+    "C_Cpp_Runner.cCompilerPath": "gcc",
+    "C_Cpp_Runner.cppCompilerPath": "g++",
+    "C_Cpp_Runner.debuggerPath": "gdb",
+    "C_Cpp_Runner.cStandard": "",
+    "C_Cpp_Runner.cppStandard": "",
+    "C_Cpp_Runner.msvcBatchPath": "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Auxiliary/Build/vcvarsall.bat",
+    "C_Cpp_Runner.useMsvc": false,
+    "C_Cpp_Runner.warnings": [
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "-Wshadow",
+        "-Wformat=2",
+        "-Wcast-align",
+        "-Wconversion",
+        "-Wsign-conversion",
+        "-Wnull-dereference"
+    ],
+    "C_Cpp_Runner.msvcWarnings": [
+        "/W4",
+        "/permissive-",
+        "/w14242",
+        "/w14287",
+        "/w14296",
+        "/w14311",
+        "/w14826",
+        "/w44062",
+        "/w44242",
+        "/w14905",
+        "/w14906",
+        "/w14263",
+        "/w44265",
+        "/w14928"
+    ],
+    "C_Cpp_Runner.enableWarnings": true,
+    "C_Cpp_Runner.warningsAsError": false,
+    "C_Cpp_Runner.compilerArgs": [],
+    "C_Cpp_Runner.linkerArgs": [],
+    "C_Cpp_Runner.includePaths": [],
+    "C_Cpp_Runner.includeSearch": [
+        "*",
+        "**/*"
+    ],
+    "C_Cpp_Runner.excludeSearch": [
+        "**/build",
+        "**/build/**",
+        "**/.*",
+        "**/.*/**",
+        "**/.vscode",
+        "**/.vscode/**"
+    ],
+    "C_Cpp_Runner.useAddressSanitizer": false,
+    "C_Cpp_Runner.useUndefinedSanitizer": false,
+    "C_Cpp_Runner.useLeakSanitizer": false,
+    "C_Cpp_Runner.showCompilationTime": false,
+    "C_Cpp_Runner.useLinkTimeOptimization": false,
+    "C_Cpp_Runner.msvcSecureNoWarnings": false,
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "[markdown]": {
+        "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
+    },
     "cSpell.words": [
-        "autorotate",
-        "Shawaiz"
-    ]
+        "fontawesome",
+        "setstate",
+        "tailwindcss",
+        "WORDPROVIDER"
+    ],
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.autopep8"
+    }
 }

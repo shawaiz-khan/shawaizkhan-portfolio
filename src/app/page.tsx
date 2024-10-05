@@ -18,7 +18,7 @@ export default function Home() {
     document.body.classList.toggle('dark', theme === 'dark');
   }, [theme]);
 
-  return ( 
+  return (
     <>
       <Hero />
       <DetailBar />

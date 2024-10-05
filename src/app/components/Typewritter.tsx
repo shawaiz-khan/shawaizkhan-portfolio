@@ -15,7 +15,7 @@ const TypewriterComponent: React.FC<TypewriterProps> = ({ titles }) => {
                 autoStart: true,
                 loop: true,
                 deleteSpeed: 20,
-                wrapperClassName: 'text-highlight text-xl md:text-2xl lg:text-3xl' // Responsive text sizes
+                wrapperClassName: 'text-highlight text-xl md:text-2xl lg:text-3xl'
             }}
         />
     );
