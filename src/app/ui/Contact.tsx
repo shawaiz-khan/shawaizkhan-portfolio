@@ -86,14 +86,14 @@ const Contact: React.FC = () => {
                                     type="text"
                                     placeholder='Name'
                                     name='user_name'
-                                    className={`flex-grow w-full p-2 rounded border ${theme === 'dark' ? 'border-gray-600 text-lightGray' : 'border-gray-300 text-secondary'} focus:outline-highlight`}
+                                    className={`flex-grow w-full p-2 rounded border ${theme === 'dark' ? 'border-gray-600 text-secondary' : 'border-gray-300 text-secondary'} focus:outline-highlight`}
                                     required
                                 />
                                 <input
                                     type="email"
                                     placeholder='Email'
                                     name='user_email'
-                                    className={`flex-grow p-2 w-full rounded border ${theme === 'dark' ? 'border-gray-600 text-lightGray' : 'border-gray-300 text-secondary'} focus:outline-highlight`}
+                                    className={`flex-grow p-2 w-full rounded border ${theme === 'dark' ? 'border-gray-600 text-secondary' : 'border-gray-300 text-secondary'} focus:outline-highlight`}
                                     required
                                 />
                             </div>
@@ -101,13 +101,13 @@ const Contact: React.FC = () => {
                                 type="text"
                                 placeholder='Subject'
                                 name='subject'
-                                className={`p-2 rounded border ${theme === 'dark' ? 'border-gray-600 text-lightGray' : 'border-gray-300 text-secondary'} focus:outline-highlight`}
+                                className={`p-2 rounded border ${theme === 'dark' ? 'border-gray-600 text-secondary' : 'border-gray-300 text-secondary'} focus:outline-highlight`}
                                 required
                             />
                             <textarea
                                 placeholder='Message'
                                 name='message'
-                                className={`p-2 rounded border h-32 resize-none overflow-hidden ${theme === 'dark' ? 'border-gray-600 text-lightGray' : 'border-gray-300 text-secondary'} focus:outline-highlight`}
+                                className={`p-2 rounded border h-32 resize-none overflow-hidden ${theme === 'dark' ? 'border-gray-600 text-secondary' : 'border-gray-300 text-secondary'} focus:outline-highlight`}
                                 required
                             />
 
