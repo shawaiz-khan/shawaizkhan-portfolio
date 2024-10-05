@@ -25,7 +25,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
   return (
     <html lang="en">
       <head>
@@ -37,6 +36,9 @@ export default function RootLayout({
         <meta property="og:description" content="I am Shawaiz Khan, a frontend web developer specialized in React, JavaScript, TypeScript, TailwindCSS, Next.js, and Node.js." />
         <meta property="og:image" content="URL_TO_YOUR_IMAGE" />
         <meta property="og:url" content="YOUR_WEBSITE_URL" />
+
+        <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+        <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <ThemeProvider>

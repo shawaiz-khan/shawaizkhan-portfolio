@@ -3,13 +3,21 @@ import React, { FC, useState, useEffect } from 'react';
 import { HiMenu, HiX } from 'react-icons/hi';
 import ThemeToggle from './ThemeToggle';
 import { useTheme } from '../components/ThemeContext';
-import { div, button, ul, li } from 'framer-motion/client';
+
+// Declare the Calendly global interface
+declare global {
+    interface Window {
+        Calendly: {
+            initPopupWidget: (options: { url: string }) => void;
+        };
+    }
+}
 
 const NavBar: FC = () => {
     const { theme } = useTheme();
-    const [isOpen, setIsOpen] = useState(false);
-    const [isSticky, setIsSticky] = useState(false);
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState<boolean>(false);
+    const [isSticky, setIsSticky] = useState<boolean>(false);
+    const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
     const menuToggle = () => setIsOpen(!isOpen);
 
@@ -34,6 +42,42 @@ const NavBar: FC = () => {
             section.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
         setIsOpen(false);
+    };
+
+    useEffect(() => {
+        // Load Calendly CSS
+        const link = document.createElement('link');
+        link.href = 'https://assets.calendly.com/assets/external/widget.css';
+        link.rel = 'stylesheet';
+        document.head.appendChild(link);
+
+        // Load Calendly JS
+        const script = document.createElement('script');
+        script.src = 'https://assets.calendly.com/assets/external/widget.js';
+        script.type = 'text/javascript';
+        script.async = true;
+
+        script.onload = () => {
+            console.log("Calendly script loaded");
+        };
+
+        document.body.appendChild(script);
+
+        return () => {
+            document.body.removeChild(script);
+            document.head.removeChild(link);
+        };
+    }, []);
+
+    const handleCalendlyClick = () => {
+        if (window.Calendly) {
+            window.Calendly.initPopupWidget({
+                url: 'https://calendly.com/shawaizkhan-biz/30min?hide_event_type_details=1&hide_gdpr_banner=1&background_color=e6f1ff&text_color=1a202c&primary_color=9a4dff',
+            });
+        } else {
+            console.error("Calendly is not loaded");
+        }
+        return false;
     };
 
     useEffect(() => {
@@ -99,15 +143,17 @@ const NavBar: FC = () => {
                 </ul>
 
                 {/* Call to Action Button */}
-                <div className='hidden md:flex gap-3'>
+                <div className='hidden md:flex gap-5'>
                     <ThemeToggle />
-                    <button className={`flex w-40 lg:w-48 h-9 rounded-md text-lightGray font-poppins font-semibold shadow-md transition-colors duration-200 ease-in text-lg justify-center items-center ${theme === 'dark' ? 'bg-highlight hover:bg-secondary hover:text-lightGray' : 'bg-highlight hover:bg-primary hover:text-highlight'}`}>
+                    <button
+                        className={`flex w-40 lg:w-48 h-9 rounded-md text-lightGray font-poppins font-semibold shadow-md transition-colors duration-200 ease-in text-lg justify-center items-center ${theme === 'dark' ? 'bg-highlight hover:bg-secondary hover:text-lightGray' : 'bg-highlight hover:bg-primary hover:text-highlight'}`}
+                        onClick={handleCalendlyClick}
+                    >
                         BOOK A MEETING
                     </button>
                 </div>
-
                 {/* Mobile Menu Icon */}
-                <div className="md:hidden flex justify-center items-center gap-1">
+                <div className="md:hidden flex justify-center items-center gap-3">
                     <ThemeToggle />
                     {!isOpen && <HiMenu size={24} onClick={menuToggle} className='text-secondary dark:text-lightGray' />}
                 </div>
@@ -120,13 +166,20 @@ const NavBar: FC = () => {
                     <ul className='flex flex-col font-poppins font-semibold text-xl gap-7 mt-10 text-secondary dark:text-darkText'>
                         <li className='cursor-pointer hover:text-highlight transition-all duration-200 ease-in' onClick={() => scrollToSection('home')}>HOME</li>
                         <li className='cursor-pointer hover:text-highlight transition-all duration-200 ease-in' onClick={() => scrollToSection('about')}>ABOUT</li>
-                        <li className='cursor-pointer hover:text-highlight transition-all duration-200 ease-in' onClick={() => scrollToSection('expEdu')}>EXPERIENCE</li>
-                        <li className='cursor-pointer hover:text-highlight transition-all duration-200 ease-in' onClick={() => scrollToSection('edu')}>EDUCATION</li>
                         <li className='cursor-pointer hover:text-highlight transition-all duration-200 ease-in' onClick={() => scrollToSection('skills')}>SKILLS</li>
                         <li className='cursor-pointer hover:text-highlight transition-all duration-200 ease-in' onClick={() => scrollToSection('portfolio')}>PROJECTS</li>
                         <li className='cursor-pointer hover:text-highlight transition-all duration-200 ease-in' onClick={() => scrollToSection('testimonials')}>TESTIMONIALS</li>
                         <li className='cursor-pointer hover:text-highlight transition-all duration-200 ease-in' onClick={() => scrollToSection('contact')}>CONTACT</li>
                     </ul>
+                    <div className='mt-auto'>
+                        <a 
+                            href="#"
+                            onClick={handleCalendlyClick}
+                            className={`flex p-5 w-full h-12 rounded-md text-lightGray font-poppins font-semibold shadow-md transition-colors duration-200 ease-in text-lg justify-center items-center ${theme === 'dark' ? 'bg-highlight hover:bg-secondary hover:text-lightGray' : 'bg-highlight hover:bg-primary hover:text-highlight'}`}
+                        >
+                            BOOK A MEETING
+                        </a>
+                    </div>
                 </div>
             </nav>
         </header>

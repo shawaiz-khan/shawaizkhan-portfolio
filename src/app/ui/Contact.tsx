@@ -1,6 +1,7 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 'use client';
 
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import Button from '../components/Buttons';
 import { AiOutlinePhone, AiOutlineMail } from 'react-icons/ai';
 import { MdOutlineLocationOn } from 'react-icons/md';
@@ -12,9 +13,11 @@ import emailjs from 'emailjs-com';
 const Contact: React.FC = () => {
     const { theme } = useTheme();
     const formRef = useRef<HTMLFormElement>(null);
+    const [isLoading, setIsLoading] = useState(false);
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+        setIsLoading(true);
 
         emailjs.sendForm(
             'service_f45gqry',
@@ -25,7 +28,7 @@ const Contact: React.FC = () => {
             .then((result) => {
                 console.log(result.text);
                 alert('Message sent successfully!');
-                
+
                 if (formRef.current) {
                     formRef.current.reset();
                 }
@@ -33,6 +36,9 @@ const Contact: React.FC = () => {
             .catch((error) => {
                 console.log(error.text);
                 alert('Failed to send message. Please try again later.');
+            })
+            .finally(() => {
+                setIsLoading(false);
             });
     };
 
@@ -111,16 +117,12 @@ const Contact: React.FC = () => {
                                 required
                             />
 
-                            <div className="flex flex-col md:flex-row gap-2">
+                            <div className="flex w-full">
                                 <Button
-                                    text='SUBMIT'
-                                    color={`text-primary ${theme === 'dark' ? 'bg-gray-700' : 'bg-secondary hover:text-primary'} w-full max-h-12 border-transparent shadow-md`}
+                                    text={isLoading ? 'Sending...' : 'SUBMIT'}
+                                    color={`text-primary ${theme === 'dark' ? 'bg-gray-700' : 'bg-secondary hover:text-primary'} max-h-12 border-transparent shadow-md`}
                                     hover='hover:bg-highlight'
-                                />
-                                <Button
-                                    text='BOOK A MEETING'
-                                    color={`text-primary ${theme === 'dark' ? 'bg-gray-700' : 'bg-secondary hover:text-primary'} w-full max-h-12 border-transparent shadow-md`}
-                                    hover='hover:bg-highlight'
+                                    isDisabled={isLoading}
                                 />
                             </div>
                         </form>
