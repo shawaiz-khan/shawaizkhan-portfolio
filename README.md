@@ -23,7 +23,7 @@ Welcome to my portfolio repository! This project showcases my skills and experie
 - **Tools:** Git, GitHub, Vercel
 
 ## 🎥 Demo
-You can view the live demo of my portfolio [here](#).
+You can view the live demo of my portfolio [here](shawaizkhan.tech).
 
 ## 🚀 Getting Started
 To view the project locally, follow these steps:
