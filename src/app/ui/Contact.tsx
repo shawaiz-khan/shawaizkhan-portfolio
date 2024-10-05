@@ -1,15 +1,36 @@
 'use client';
 
-import React from 'react';
+import React, { useRef } from 'react';
 import Button from '../components/Buttons';
 import { AiOutlinePhone, AiOutlineMail } from 'react-icons/ai';
 import { MdOutlineLocationOn } from 'react-icons/md';
 import Image from 'next/image';
 import formLottie from '../assets/animations/formAnim.gif';
 import { useTheme } from '../components/ThemeContext';
+import emailjs from 'emailjs-com';
 
 const Contact: React.FC = () => {
     const { theme } = useTheme();
+    const formRef = useRef<HTMLFormElement>(null);
+
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+
+        emailjs.sendForm(
+            'service_f45gqry',
+            'template_t2xjlnj',
+            formRef.current as HTMLFormElement,
+            'IOmcwSsFE3mJ4gTsb' // Public API Key
+        )
+            .then((result) => {
+                console.log(result.text);
+                alert('Message sent successfully!');
+            })
+            .catch((error) => {
+                console.log(error.text);
+                alert('Failed to send message. Please try again later.');
+            });
+    };
 
     return (
         <main
@@ -54,27 +75,36 @@ const Contact: React.FC = () => {
                 <article className={`h-auto w-full md:w-2/3 lg:w-3/5 max-w-lg rounded-lg p-5 flex flex-col justify-center shadow-lg ${theme === 'dark' ? 'bg-secondary' : 'bg-lightGray'}`}>
                     <div className='ml-0 md:ml-5'>
                         <h1 className={`text-lg md:text-xl mb-2 font-poppins font-bold ${theme === 'dark' ? 'text-lightGray' : 'text-secondary'}`}>Get in Touch</h1>
-                        <form className='flex flex-col gap-4'>
+
+                        <form ref={formRef} onSubmit={handleSubmit} className='flex flex-col gap-4'>
                             <div className='flex flex-col md:flex-row gap-3'>
                                 <input
                                     type="text"
                                     placeholder='Name'
+                                    name='user_name'
                                     className={`flex-grow w-full p-2 rounded border ${theme === 'dark' ? 'border-gray-600 text-lightGray' : 'border-gray-300 text-secondary'} focus:outline-highlight`}
+                                    required
                                 />
                                 <input
                                     type="email"
                                     placeholder='Email'
+                                    name='user_email'
                                     className={`flex-grow p-2 w-full rounded border ${theme === 'dark' ? 'border-gray-600 text-lightGray' : 'border-gray-300 text-secondary'} focus:outline-highlight`}
+                                    required
                                 />
                             </div>
                             <input
                                 type="text"
                                 placeholder='Subject'
+                                name='subject'
                                 className={`p-2 rounded border ${theme === 'dark' ? 'border-gray-600 text-lightGray' : 'border-gray-300 text-secondary'} focus:outline-highlight`}
+                                required
                             />
                             <textarea
                                 placeholder='Message'
+                                name='message'
                                 className={`p-2 rounded border h-32 resize-none overflow-hidden ${theme === 'dark' ? 'border-gray-600 text-lightGray' : 'border-gray-300 text-secondary'} focus:outline-highlight`}
+                                required
                             />
 
                             <div className="flex flex-col md:flex-row gap-2">
