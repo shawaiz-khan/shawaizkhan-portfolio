@@ -29,7 +29,7 @@ const ProjectPopup: React.FC<ProjectPopupProps> = ({ project, onClose }) => {
                     <ImCross className='text-secondary hover:text-highlight dark:text-lightGray dark:hover:text-highlight transition-all duration-150 ease-in' />
                 </button>
 
-                <div className="flex-shrink-0">
+                <div className="flex-shrink-0 mt-7">
                     <div className="relative w-full max-w-[600px] h-auto">
                         <Image
                             src={image.src}
