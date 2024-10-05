@@ -44,7 +44,7 @@ const Contact: React.FC = () => {
 
     return (
         <main
-            className={`min-h-screen w-full flex justify-center items-center p-6 md:p-10 ${theme === 'dark' ? 'bg-darkBackground' : 'bg-primary'}`}
+            className={`h-full w-full flex justify-center items-center p-6 md:p-10 ${theme === 'dark' ? 'bg-darkBackground' : 'bg-primary'}`}
             id='contact'
         >
             <section className='flex flex-col md:flex-row justify-center items-start w-full max-w-6xl'>

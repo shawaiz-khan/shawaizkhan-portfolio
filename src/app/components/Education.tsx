@@ -102,7 +102,7 @@ const RenderEducationData = ({ data }: { data: IEducation[] }) => {
 const Education = () => {
     return (
         <section id="education-timeline" className="p-5 py-10">
-            <div className="min-h-screen flex justify-center">
+            <div className="min-h-full flex justify-center">
                 <div className="lg:w-2/3 w-full mx-auto">
                     <RenderEducationData data={EDUCATION} />
                 </div>

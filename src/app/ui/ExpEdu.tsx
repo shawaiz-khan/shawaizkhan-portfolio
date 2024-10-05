@@ -12,7 +12,7 @@ const ExpEdu: FC = () => {
 
     return (
         <main
-            className={`h-full p-10 flex flex-col justify-center items-center transition-colors duration-300 ${theme === 'light' ? 'bg-lightGray' : 'bg-darkBackground'}`}
+            className={`h-fit p-10 flex flex-col justify-center items-center transition-colors duration-300 ${theme === 'light' ? 'bg-lightGray' : 'bg-darkBackground'}`}
             id='expEdu'
         >
             <div className='flex gap-5'>

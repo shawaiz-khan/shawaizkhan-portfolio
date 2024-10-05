@@ -30,11 +30,18 @@ const Hero: React.FC = () => {
                 </p>
                 {/* Buttons */}
                 <div className="btn-container flex flex-row gap-3 sm:gap-4 mb-4 mt-4">
-                    <Button
-                        text='RESUME'
-                        color={`bg-primary shadow-md ${theme === 'dark' ? 'hover:bg-highlight hover:text-darkBackground border-secondary bg-secondary text-lightGray' : 'border-primary text-secondary'}`}
-                        hover='hover:bg-highlight hover:text-primary hover:border-highlight'
-                    />
+                    <a
+                        href="https://drive.google.com/file/d/1Tm5nKiTZHDNMyekB6yb62erlRd6w0dg6/view?usp=sharing"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title="View and download my resume"
+                    >
+                        <Button
+                            text='RESUME'
+                            color={`bg-primary shadow-md ${theme === 'dark' ? 'hover:bg-highlight hover:text-darkBackground border-secondary bg-secondary text-lightGray' : 'border-primary text-secondary'}`}
+                            hover='hover:bg-highlight hover:text-primary hover:border-highlight'
+                        />
+                    </a>
                     <Button
                         text='CONTACT'
                         color={`bg-primary shadow-md ${theme === 'dark' ? 'hover:bg-highlight hover:text-darkBackground border-secondary bg-secondary text-lightGray' : 'border-primary text-secondary'}`}
