@@ -29,7 +29,7 @@ const GoToTop: FC = () => {
         isVisible && (
             <div
                 onClick={toggleBtn}
-                className='text-primary bg-highlight hover:bg-[#7A3DFF] bottom-4 fixed right-4 p-3 rounded-md transition-all duration-200 ease-in cursor-pointer'
+                className='text-primary bg-highlight hover:bg-[#7A3DFF] bottom-4 fixed right-4 p-3 rounded-md transition-all duration-200 ease-in cursor-pointer z-50'
             >
                 <BsArrowUpCircleFill size={25} />
             </div>
