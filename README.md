@@ -30,11 +30,11 @@ To view the project locally, follow these steps:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/shawaiz-khan/personal-portfolio-site.git
+   git clone https://github.com/shawaiz-khan/shawaizkhan-portfolio.git
    ```
 2. Navigate to the project directory:
    ```bash
-   cd personal-portfolio-site
+   cd shawaizkhan-portfolio
    ```
 3. Install the dependencies:
    ```bash
