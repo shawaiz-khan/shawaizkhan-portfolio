@@ -38,7 +38,7 @@ const PortfolioCard: React.FC<PortfolioCardProps> = ({ title, description, categ
         <article className={`min-w-[350px] max-w-[350px] ${theme === 'dark' ? 'bg-darkBackground text-darkText' : 'bg-lightGray text-secondary'} shadow-2xl p-4 flex flex-col rounded-xl relative`}>
             <div className={`absolute inset-0 rounded-xl shadow-md ${theme === 'dark' ? 'shadow-inner bg-gradient-to-b from-transparent to-darkBackground' : 'bg-gradient-to-b from-transparent to-lightGray'}`} />
             <div className='flex justify-center mb-4' style={{ height: '216px', position: 'relative' }}>
-                <div className='flex justify-center mb-4' style={{ height: '216px', position: 'relative', overflow: 'hidden' }}>
+                <div className='flex justify-center mb-4 border border-gray-300' style={{ height: '216px', position: 'relative', overflow: 'hidden' }}>
                     <div className='inset-0'>
                         <Image
                             src={image.src}
