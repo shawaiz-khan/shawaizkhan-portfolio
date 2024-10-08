@@ -34,8 +34,8 @@ export default function RootLayout({
         <meta name="author" content="Shawaiz Khan" />
         <meta property="og:title" content="Shawaiz Khan - Frontend Web Developer" />
         <meta property="og:description" content="I am Shawaiz Khan, a frontend web developer specialized in React, JavaScript, TypeScript, TailwindCSS, Next.js, and Node.js." />
-        <meta property="og:image" content="URL_TO_YOUR_IMAGE" />
-        <meta property="og:url" content="YOUR_WEBSITE_URL" />
+        <meta property="og:image" content="./assets/images/IMG1200X630.jpg" />
+        <meta property="og:url" content="shawaizkhan.tech" />
 
         <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
         <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
