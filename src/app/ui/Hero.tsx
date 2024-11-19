@@ -10,6 +10,12 @@ import { useTheme } from '../components/ThemeContext';
 
 const Hero: React.FC = () => {
     const { theme } = useTheme();
+    const scrollToSection = (sectionId: string) => {
+        const section = document.getElementById(sectionId);
+        if (section) {
+            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    };
 
     return (
         <div
@@ -46,6 +52,7 @@ const Hero: React.FC = () => {
                         text='CONTACT'
                         color={`bg-primary shadow-md ${theme === 'dark' ? 'hover:bg-highlight hover:text-darkBackground border-secondary bg-secondary text-lightGray' : 'border-primary text-secondary'}`}
                         hover='hover:bg-highlight hover:text-primary hover:border-highlight'
+                        onClick={() => scrollToSection('contact')}
                     />
                 </div>
             </article>
