@@ -35,7 +35,7 @@ const Hero: React.FC = () => {
                     to use, ensuring every detail serves a purpose and enhances the user experience.
                 </p>
                 {/* Buttons */}
-                <div className="btn-container flex flex-row gap-3 sm:gap-4 mb-4 mt-4">
+                <div className="btn-container grid grid-cols-2 gap-3 sm:gap-4 mb-4 mt-4">
                     <a
                         href="https://drive.google.com/file/d/1Tm5nKiTZHDNMyekB6yb62erlRd6w0dg6/view?usp=sharing"
                         target="_blank"

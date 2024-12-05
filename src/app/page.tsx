@@ -1,14 +1,14 @@
 'use client'
 
 import * as React from 'react';
-import Hero from './ui/Hero';
+import Hero from './pages/Hero';
 import DetailBar from './components/DetailBar';
-import About from './ui/About';
-import ExpEdu from './ui/ExpEdu';
-import Skills from './ui/Skills';
-import Portfolio from './ui/Portfolio';
-import Testimonials from './ui/Testimonials';
-import Contact from './ui/Contact';
+import About from './pages/About';
+import ExpEdu from './pages/ExpEdu';
+import Skills from './pages/Skills';
+import Portfolio from './pages/Portfolio';
+import Testimonials from './pages/Testimonials';
+import Contact from './pages/Contact';
 import { useTheme } from './components/ThemeContext';
 
 export default function Home() {
